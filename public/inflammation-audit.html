@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Prostate Inflammation Audit — ProstateAdvice</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Take the 3-minute Prostate Inflammation Audit. Evaluate chronic inflammation risk from diet, alcohol, sitting, sleep, stress, and exercise. Get a personalized risk tier and actionable recovery plan.">
+  <meta name="keywords" content="prostate inflammation, inflammation audit, chronic inflammation risk, prostate health assessment, anti-inflammatory diet, pelvic health, men's health, prostate wellness">
+  <meta name="author" content="ProstateAdvice.com">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://prostateadvice.com/inflammation-audit.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://prostateadvice.com/inflammation-audit.html">
+  <meta property="og:title" content="Prostate Inflammation Audit — ProstateAdvice">
+  <meta property="og:description" content="3-minute interactive audit to evaluate your chronic inflammation risk. Get a personalized tier, weekly pelvic reset protocol, and nutrition refinement cues.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&h=630&fit=crop&q=80">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prostate Inflammation Audit — ProstateAdvice">
+  <meta name="twitter:description" content="Evaluate your chronic inflammation risk in 3 minutes. Personalized tier and actionable plan.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&h=630&fit=crop&q=80">
+
+  <!-- AEO: Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthTopicContent",
+    "name": "Prostate Inflammation Audit",
+    "description": "A 3-minute interactive audit evaluating chronic inflammation risk factors including ultra-processed food intake, alcohol frequency, daily sitting duration, sleep debt, stress load, and exercise patterns. Provides personalized inflammation risk tier and actionable recovery protocols.",
+    "url": "https://prostateadvice.com/inflammation-audit.html",
+    "audience": {
+      "@type": "PeopleAudience",
+      "suggestedMinAge": 18,
+      "suggestedMaxAge": 40,
+      "suggestedGender": "male"
+    },
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Prostate Inflammation"
+    },
+    "mainContentOfPage": {
+      "@type": "WebPageElement",
+      "cssSelector": "#audit-section"
+    },
+    "keywords": ["prostate inflammation", "chronic inflammation", "anti-inflammatory lifestyle", "pelvic health", "prostate wellness"],
+    "inLanguage": ["en", "es", "fr"]
+  }
+  </script>
+
+  <!-- Preload critical assets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/themes.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
+  <style>
+    /* Page-specific hero (compact) */
+    .hero-compact {
+      position: relative;
+      padding-top: calc(var(--navbar-height) + var(--space-10));
+      padding-bottom: var(--space-12);
+      overflow: hidden;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .hero-compact {
+        min-height: 380px;
+      }
+    }
+    .hero-compact .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+    .hero-compact .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-compact .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 74, 51, 0.92) 0%,
+        rgba(27, 107, 74, 0.85) 40%,
+        rgba(42, 157, 110, 0.75) 100%
+      );
+    }
+    [data-theme="dark"] .hero-compact .hero-overlay {
+      background: linear-gradient(
+        135deg,
+        rgba(10, 15, 20, 0.95) 0%,
+        rgba(15, 25, 18, 0.9) 50%,
+        rgba(10, 20, 15, 0.85) 100%
+      );
+    }
+    .hero-compact .hero-content {
+      position: relative;
+      z-index: 1;
+      color: var(--color-white);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero-compact .hero-title {
+      color: var(--color-white);
+      margin-bottom: var(--space-4);
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+    .hero-compact .hero-description {
+      font-size: var(--text-lg);
+      color: rgba(255, 255, 255, 0.85);
+      line-height: var(--line-height-relaxed);
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+
+    /* Audit quiz container */
+    .audit-container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .audit-widget {
+      background: var(--surface-card);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-8);
+      border: 1px solid var(--color-gray-200);
+      box-shadow: var(--shadow-xl);
+    }
+    [data-theme="dark"] .audit-widget {
+      border-color: rgba(255,255,255,0.08);
+    }
+    .audit-question-title {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-2);
+    }
+    .audit-question-desc {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      margin-bottom: var(--space-6);
+      line-height: var(--line-height-relaxed);
+    }
+    .audit-step {
+      display: none;
+    }
+    .audit-step.active {
+      display: block;
+      animation: fadeInUp 0.4s ease both;
+    }
+    .audit-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-3);
+      margin-top: var(--space-6);
+    }
+
+    /* Results section */
+    .results-container {
+      display: none;
+    }
+    .results-container.active {
+      display: block;
+      animation: fadeInUp 0.6s ease both;
+    }
+    .results-header {
+      text-align: center;
+      margin-bottom: var(--space-8);
+    }
+    .tier-badge-large {
+      display: inline-block;
+      padding: var(--space-2) var(--space-6);
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-bold);
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing-wider);
+      margin-bottom: var(--space-4);
+    }
+    .tier-low { background: var(--color-success-light); color: #166534; }
+    .tier-moderate { background: var(--color-info-light); color: #1E40AF; }
+    .tier-elevated { background: var(--color-warning-light); color: #92400E; }
+    .tier-high { background: var(--color-danger-light); color: #991B1B; }
+
+    [data-theme="dark"] .tier-low { background: rgba(34, 197, 94, 0.15); color: #4ADE80; }
+    [data-theme="dark"] .tier-moderate { background: rgba(59, 130, 246, 0.15); color: #60A5FA; }
+    [data-theme="dark"] .tier-elevated { background: rgba(245, 158, 11, 0.15); color: #FBBF24; }
+    [data-theme="dark"] .tier-high { background: rgba(239, 68, 68, 0.15); color: #F87171; }
+
+    /* Score gauge ring */
+    .gauge-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: var(--space-6);
+    }
+    .gauge-ring {
+      width: 200px;
+      height: 200px;
+      position: relative;
+    }
+    .gauge-ring svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+    .gauge-ring-bg {
+      fill: none;
+      stroke: var(--color-gray-200);
+      stroke-width: 10;
+    }
+    [data-theme="dark"] .gauge-ring-bg {
+      stroke: rgba(255,255,255,0.1);
+    }
+    .gauge-ring-fill {
+      fill: none;
+      stroke: var(--color-primary);
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-dasharray: 565;
+      stroke-dashoffset: 565;
+      transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.5s ease;
+    }
+    .gauge-ring-value {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .gauge-score-num {
+      font-size: var(--text-4xl);
+      font-weight: var(--font-weight-extrabold);
+      color: var(--color-primary);
+      line-height: 1;
+    }
+    .gauge-score-label {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      margin-top: var(--space-1);
+    }
+
+    /* Protocol cards */
+    .protocol-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+      margin-top: var(--space-8);
+    }
+    @media (min-width: 768px) {
+      .protocol-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .protocol-card {
+      background: var(--surface-card);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      border: 1px solid var(--color-gray-200);
+    }
+    [data-theme="dark"] .protocol-card {
+      border-color: rgba(255,255,255,0.08);
+    }
+    .protocol-card-title {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-4);
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .protocol-card-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-lg);
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .protocol-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-3) 0;
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: var(--line-height-relaxed);
+    }
+    .protocol-item-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: var(--radius-full);
+      background: var(--color-primary);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    /* Results actions */
+    .results-actions {
+      display: flex;
+      gap: var(--space-3);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: var(--space-8);
+    }
+
+    /* Disclaimer inline */
+    .disclaimer-inline {
+      background: var(--color-warning-light);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4) var(--space-5);
+      font-size: var(--text-sm);
+      color: #92400E;
+      line-height: var(--line-height-relaxed);
+      margin-top: var(--space-8);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+    [data-theme="dark"] .disclaimer-inline {
+      background: rgba(245, 158, 11, 0.1);
+      color: #FBBF24;
+    }
+    .disclaimer-icon {
+      flex-shrink: 0;
+      font-size: 1.25rem;
+      margin-top: 1px;
+    }
+
+    /* Question number indicator */
+    .question-indicator {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+    }
+    .question-num {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      color: white;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-sm);
+      font-weight: var(--font-weight-bold);
+    }
+    .question-category {
+      font-size: var(--text-xs);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing-wider);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Skip to content (accessibility) -->
+  <a href="#main" class="sr-only" data-i18n="skip_to_content" style="position:absolute;top:-40px;left:0;background:var(--color-primary);color:white;padding:8px 16px;z-index:9999;transition:top 0.3s;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand" aria-label="ProstateAdvice Home">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="currentColor"/>
+          <path d="M16 6C11.58 6 8 9.58 8 14c0 3.07 1.72 5.74 4.25 7.08L16 26l3.75-4.92C22.28 19.74 24 17.07 24 14c0-4.42-3.58-8-8-8z" fill="white" opacity="0.9"/>
+          <circle cx="16" cy="13" r="3" fill="currentColor"/>
+        </svg>
+        <span>ProstateAdvice</span>
+      </a>
+
+      <div class="navbar-nav">
+        <a href="/" class="nav-link" data-i18n="nav_home">Home</a>
+        <a href="strength-score.html" class="nav-link" data-i18n="nav_score">Strength Score</a>
+        <a href="pelvic-power.html" class="nav-link" data-i18n="nav_pelvic">Pelvic Power</a>
+        <a href="inflammation-audit.html" class="nav-link active" data-i18n="nav_inflammation">Inflammation Audit</a>
+        <a href="desk-reset.html" class="nav-link" data-i18n="nav_desk">Desk Reset</a>
+        <a href="supplements.html" class="nav-link" data-i18n="nav_supplements">Supplements</a>
+        <a href="safety.html" class="nav-link" data-i18n="nav_safety">Safety</a>
+      </div>
+
+      <div class="navbar-actions">
+        <div class="lang-switcher" role="group" aria-label="Language selector">
+          <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+          <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
+          <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="/" data-i18n="nav_home">Home</a>
+    <a href="strength-score.html" data-i18n="nav_score">Strength Score</a>
+    <a href="pelvic-power.html" data-i18n="nav_pelvic">Pelvic Power</a>
+    <a href="inflammation-audit.html" data-i18n="nav_inflammation">Inflammation Audit</a>
+    <a href="sexual-longevity.html" data-i18n="nav_longevity">Sexual Longevity</a>
+    <a href="desk-reset.html" data-i18n="nav_desk">Desk Reset</a>
+    <a href="supplements.html" data-i18n="nav_supplements">Supplements</a>
+    <a href="safety.html" data-i18n="nav_safety">Safety</a>
+    <a href="about.html" data-i18n="nav_about">About</a>
+  </div>
+
+  <main id="main">
+    <!-- ===== COMPACT HERO ===== -->
+    <section class="hero-compact" aria-labelledby="hero-title">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&h=600&fit=crop&q=80"
+             alt="Colorful healthy food spread representing anti-inflammatory nutrition for prostate health"
+             width="1600" height="600"
+             loading="eager"
+             fetchpriority="high">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-label" data-i18n="ia_hero_label">3-Minute Assessment</span>
+          <h1 id="hero-title" class="hero-title" data-i18n="ia_hero_title">Prostate Inflammation Audit</h1>
+          <p class="hero-description" data-i18n="ia_hero_desc">Evaluate your chronic inflammation risk across six key lifestyle factors. Get a personalized risk tier and an actionable recovery protocol.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AUDIT SECTION ===== -->
+    <section id="audit-section" class="section" aria-labelledby="audit-title">
+      <div class="container">
+        <div class="audit-container">
+          <!-- Audit Widget -->
+          <div class="audit-widget" id="inflammation-audit" data-animate>
+            <!-- Progress bar -->
+            <div style="margin-bottom:var(--space-6);">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-2);">
+                <span class="audit-progress-text font-medium text-sm" style="color:var(--text-secondary);" data-i18n="ia_progress_default">Question 1 of 6</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" id="audit-progress" style="width:16.66%"></div>
+              </div>
+            </div>
+
+            <!-- Question 1: Ultra-processed food intake -->
+            <div class="audit-step active" data-step="0">
+              <div class="question-indicator">
+                <div class="question-num">1</div>
+                <span class="question-category" data-i18n="ia_cat_diet">Diet</span>
+              </div>
+              <h3 class="audit-question-title" data-i18n="ia_q1">How often do you consume ultra-processed foods?</h3>
+              <p class="audit-question-desc" data-i18n="ia_q1_desc">Fast food, packaged snacks, sugary drinks, frozen meals, processed meats.</p>
+              <div class="quiz-options">
+                <div class="quiz-option" data-value="4" role="button" tabindex="0" aria-label="Rarely">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q1_a1">Rarely</span>
+                </div>
+                <div class="quiz-option" data-value="3" role="button" tabindex="0" aria-label="Sometimes">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q1_a2">Sometimes</span>
+                </div>
+                <div class="quiz-option" data-value="2" role="button" tabindex="0" aria-label="Often">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q1_a3">Often</span>
+                </div>
+                <div class="quiz-option" data-value="1" role="button" tabindex="0" aria-label="Daily">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q1_a4">Daily</span>
+                </div>
+              </div>
+              <div class="audit-nav">
+                <div></div>
+                <button class="btn btn-primary" data-audit-next data-i18n="ia_next">Next</button>
+              </div>
+            </div>
+
+            <!-- Question 2: Alcohol frequency -->
+            <div class="audit-step" data-step="1">
+              <div class="question-indicator">
+                <div class="question-num">2</div>
+                <span class="question-category" data-i18n="ia_cat_alcohol">Alcohol</span>
+              </div>
+              <h3 class="audit-question-title" data-i18n="ia_q2">How frequently do you consume alcohol?</h3>
+              <p class="audit-question-desc" data-i18n="ia_q2_desc">Include beer, wine, spirits, and cocktails.</p>
+              <div class="quiz-options">
+                <div class="quiz-option" data-value="4" role="button" tabindex="0" aria-label="Rarely or never">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q2_a1">Rarely or never</span>
+                </div>
+                <div class="quiz-option" data-value="3" role="button" tabindex="0" aria-label="1-2 per week">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q2_a2">1-2 drinks per week</span>
+                </div>
+                <div class="quiz-option" data-value="2" role="button" tabindex="0" aria-label="3-5 per week">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q2_a3">3-5 drinks per week</span>
+                </div>
+                <div class="quiz-option" data-value="1" role="button" tabindex="0" aria-label="Daily">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q2_a4">Daily</span>
+                </div>
+              </div>
+              <div class="audit-nav">
+                <button class="btn btn-ghost" data-audit-back data-i18n="ia_back">Back</button>
+                <button class="btn btn-primary" data-audit-next data-i18n="ia_next">Next</button>
+              </div>
+            </div>
+
+            <!-- Question 3: Daily sitting duration -->
+            <div class="audit-step" data-step="2">
+              <div class="question-indicator">
+                <div class="question-num">3</div>
+                <span class="question-category" data-i18n="ia_cat_sitting">Sitting</span>
+              </div>
+              <h3 class="audit-question-title" data-i18n="ia_q3">How many hours do you spend sitting each day?</h3>
+              <p class="audit-question-desc" data-i18n="ia_q3_desc">Include desk work, commuting, and sedentary leisure time.</p>
+              <div class="quiz-options">
+                <div class="quiz-option" data-value="4" role="button" tabindex="0" aria-label="Under 4 hours">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q3_a1">Under 4 hours</span>
+                </div>
+                <div class="quiz-option" data-value="3" role="button" tabindex="0" aria-label="4-6 hours">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q3_a2">4-6 hours</span>
+                </div>
+                <div class="quiz-option" data-value="2" role="button" tabindex="0" aria-label="6-8 hours">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q3_a3">6-8 hours</span>
+                </div>
+                <div class="quiz-option" data-value="1" role="button" tabindex="0" aria-label="8+ hours">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q3_a4">8+ hours</span>
+                </div>
+              </div>
+              <div class="audit-nav">
+                <button class="btn btn-ghost" data-audit-back data-i18n="ia_back">Back</button>
+                <button class="btn btn-primary" data-audit-next data-i18n="ia_next">Next</button>
+              </div>
+            </div>
+
+            <!-- Question 4: Sleep debt -->
+            <div class="audit-step" data-step="3">
+              <div class="question-indicator">
+                <div class="question-num">4</div>
+                <span class="question-category" data-i18n="ia_cat_sleep">Sleep</span>
+              </div>
+              <h3 class="audit-question-title" data-i18n="ia_q4">How much sleep do you consistently get per night?</h3>
+              <p class="audit-question-desc" data-i18n="ia_q4_desc">Consider your average over the past 2 weeks.</p>
+              <div class="quiz-options">
+                <div class="quiz-option" data-value="4" role="button" tabindex="0" aria-label="7-8 hours consistently">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q4_a1">7-8 hours consistently</span>
+                </div>
+                <div class="quiz-option" data-value="3" role="button" tabindex="0" aria-label="6-7 hours">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q4_a2">6-7 hours</span>
+                </div>
+                <div class="quiz-option" data-value="2" role="button" tabindex="0" aria-label="5-6 hours">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q4_a3">5-6 hours</span>
+                </div>
+                <div class="quiz-option" data-value="1" role="button" tabindex="0" aria-label="Under 5 hours">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q4_a4">Under 5 hours</span>
+                </div>
+              </div>
+              <div class="audit-nav">
+                <button class="btn btn-ghost" data-audit-back data-i18n="ia_back">Back</button>
+                <button class="btn btn-primary" data-audit-next data-i18n="ia_next">Next</button>
+              </div>
+            </div>
+
+            <!-- Question 5: Stress load -->
+            <div class="audit-step" data-step="4">
+              <div class="question-indicator">
+                <div class="question-num">5</div>
+                <span class="question-category" data-i18n="ia_cat_stress">Stress</span>
+              </div>
+              <h3 class="audit-question-title" data-i18n="ia_q5">How would you describe your current stress level?</h3>
+              <p class="audit-question-desc" data-i18n="ia_q5_desc">Consider work, relationships, financial, and general life stress.</p>
+              <div class="quiz-options">
+                <div class="quiz-option" data-value="4" role="button" tabindex="0" aria-label="Low">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q5_a1">Low</span>
+                </div>
+                <div class="quiz-option" data-value="3" role="button" tabindex="0" aria-label="Moderate">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q5_a2">Moderate</span>
+                </div>
+                <div class="quiz-option" data-value="2" role="button" tabindex="0" aria-label="High">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q5_a3">High</span>
+                </div>
+                <div class="quiz-option" data-value="1" role="button" tabindex="0" aria-label="Very High">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q5_a4">Very High</span>
+                </div>
+              </div>
+              <div class="audit-nav">
+                <button class="btn btn-ghost" data-audit-back data-i18n="ia_back">Back</button>
+                <button class="btn btn-primary" data-audit-next data-i18n="ia_next">Next</button>
+              </div>
+            </div>
+
+            <!-- Question 6: Exercise patterns -->
+            <div class="audit-step" data-step="5">
+              <div class="question-indicator">
+                <div class="question-num">6</div>
+                <span class="question-category" data-i18n="ia_cat_exercise">Exercise</span>
+              </div>
+              <h3 class="audit-question-title" data-i18n="ia_q6">How often do you exercise per week?</h3>
+              <p class="audit-question-desc" data-i18n="ia_q6_desc">Include any intentional physical activity of 20+ minutes (walking, gym, sports, etc.).</p>
+              <div class="quiz-options">
+                <div class="quiz-option" data-value="4" role="button" tabindex="0" aria-label="5+ times per week">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q6_a1">5+ times per week</span>
+                </div>
+                <div class="quiz-option" data-value="3" role="button" tabindex="0" aria-label="3-4 times per week">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q6_a2">3-4 times per week</span>
+                </div>
+                <div class="quiz-option" data-value="2" role="button" tabindex="0" aria-label="1-2 times per week">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q6_a3">1-2 times per week</span>
+                </div>
+                <div class="quiz-option" data-value="1" role="button" tabindex="0" aria-label="Rarely">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="ia_q6_a4">Rarely</span>
+                </div>
+              </div>
+              <div class="audit-nav">
+                <button class="btn btn-ghost" data-audit-back data-i18n="ia_back">Back</button>
+                <button class="btn btn-accent" data-audit-submit data-i18n="ia_see_results">See My Results</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div class="results-container" id="audit-results">
+            <div class="audit-widget">
+              <div class="results-header">
+                <h2 class="section-title" data-i18n="ia_results_title" style="margin-bottom:var(--space-4);">Your Inflammation Audit Results</h2>
+
+                <!-- Gauge ring -->
+                <div class="gauge-wrapper">
+                  <div class="gauge-ring">
+                    <svg viewBox="0 0 200 200">
+                      <circle class="gauge-ring-bg" cx="100" cy="100" r="90"/>
+                      <circle class="gauge-ring-fill" id="gauge-fill" cx="100" cy="100" r="90"/>
+                    </svg>
+                    <div class="gauge-ring-value">
+                      <div class="gauge-score-num" id="gauge-score">0</div>
+                      <div class="gauge-score-label" data-i18n="ia_out_of">out of 24</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tier badge -->
+                <div id="tier-badge" class="tier-badge-large tier-low">Low Risk</div>
+                <p id="tier-description" class="text-secondary-color" style="font-size:var(--text-sm);max-width:480px;margin:var(--space-4) auto 0;line-height:var(--line-height-relaxed);"></p>
+              </div>
+
+              <!-- Protocol cards -->
+              <div class="protocol-grid">
+                <!-- Weekly Pelvic Reset Protocol -->
+                <div class="protocol-card">
+                  <div class="protocol-card-title">
+                    <div class="protocol-card-icon card-icon-primary" style="background:var(--color-primary-50);color:var(--color-primary);">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <span data-i18n="ia_protocol_pelvic_title">Weekly Pelvic Reset</span>
+                  </div>
+                  <div class="protocol-item">
+                    <div class="protocol-item-dot"></div>
+                    <span data-i18n="ia_protocol_pelvic_1">3x/week: 5-min pelvic floor contract-relax routine before bed</span>
+                  </div>
+                  <div class="protocol-item">
+                    <div class="protocol-item-dot"></div>
+                    <span data-i18n="ia_protocol_pelvic_2">Daily: 2-min standing hip circles after every 90 min of sitting</span>
+                  </div>
+                  <div class="protocol-item">
+                    <div class="protocol-item-dot"></div>
+                    <span data-i18n="ia_protocol_pelvic_3">2x/week: Deep squat hold progression (30s to 2 min)</span>
+                  </div>
+                  <div class="protocol-item">
+                    <div class="protocol-item-dot"></div>
+                    <span data-i18n="ia_protocol_pelvic_4">Weekend: 20-min walk with diaphragmatic breathing focus</span>
+                  </div>
+                </div>
+
+                <!-- Circulation Booster Plan -->
+                <div class="protocol-card">
+                  <div class="protocol-card-title">
+                    <div class="protocol-card-icon" style="background:var(--color-accent-50);color:var(--color-accent-dark);">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <span data-i18n="ia_protocol_circ_title">Circulation Booster</span>
+                  </div>
+                  <div class="protocol-item">
+                    <div class="protocol-item-dot" style="background:var(--color-accent);"></div>
+                    <span data-i18n="ia_protocol_circ_1">Cold-to-warm shower contrast on lower body (30s cold / 60s warm x 3)</span>
+                  </div>
+                  <div class="protocol-item">
+                    <div class="protocol-item-dot" style="background:var(--color-accent);"></div>
+                    <span data-i18n="ia_protocol_circ_2">Evening walk: 15-20 min brisk pace to improve pelvic blood flow</span>
+                  </div>
+                  <div class="protocol-item">
+                    <div class="protocol-item-dot" style="background:var(--color-accent);"></div>
+                    <span data-i18n="ia_protocol_circ_3">Legs-up-the-wall pose for 5 min before sleep to reduce pelvic congestion</span>
+                  </div>
+                </div>
+
+                <!-- Nutrition Refinement Cues -->
+                <div class="protocol-card">
+                  <div class="protocol-card-title">
+                    <div class="protocol-card-icon" style="background:var(--color-success-light);color:#166534;">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                    </div>
+                    <span data-i18n="ia_protocol_nutrition_title">Nutrition Refinement</span>
+                  </div>
+                  <div class="protocol-item">
+                    <div class="protocol-item-dot" style="background:var(--color-success);"></div>
+                    <span data-i18n="ia_protocol_nutrition_1">Add 2 servings of cruciferous vegetables daily (broccoli, cauliflower, kale)</span>
+                  </div>
+                  <div class="protocol-item">
+                    <div class="protocol-item-dot" style="background:var(--color-success);"></div>
+                    <span data-i18n="ia_protocol_nutrition_2">Replace one processed snack per day with a handful of walnuts or pumpkin seeds</span>
+                  </div>
+                  <div class="protocol-item">
+                    <div class="protocol-item-dot" style="background:var(--color-success);"></div>
+                    <span data-i18n="ia_protocol_nutrition_3">Include lycopene-rich foods 3x/week (cooked tomatoes, watermelon, pink grapefruit)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Disclaimer -->
+              <div class="disclaimer-inline" role="note">
+                <span class="disclaimer-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </span>
+                <span data-i18n="ia_disclaimer">This audit is for educational purposes only and is not a medical diagnosis. It evaluates lifestyle factors associated with chronic inflammation. Consult a healthcare professional for personalized medical advice.</span>
+              </div>
+
+              <!-- Actions -->
+              <div class="results-actions">
+                <button class="btn btn-primary" id="save-results-btn" data-i18n="ia_save_results">Save My Results</button>
+                <button class="btn btn-secondary" id="retake-btn" data-i18n="ia_take_again">Take Again</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="section" aria-labelledby="cta-title">
+      <div class="container" data-animate>
+        <div class="cta-banner">
+          <h2 id="cta-title" class="cta-title" data-i18n="cta_title">Build Prostate Strength Early. Keep It for Life.</h2>
+          <p class="cta-text" data-i18n="cta_text">Start with the 5-minute Strength Score. No account needed. 100% private.</p>
+          <a href="strength-score.html" class="btn btn-accent btn-lg" data-i18n="cta_button">Start Your Assessment</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-name">ProstateAdvice</div>
+          <p data-i18n="footer_brand_text">The lifelong prostate strength and performance companion for men 18-40. Science-grounded. Privacy-first. Zero fear tactics.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_tools">Tools</h4>
+          <div class="footer-links">
+            <a href="strength-score.html" data-i18n="tool1_title">Prostate Strength Score</a>
+            <a href="pelvic-power.html" data-i18n="tool2_title">Pelvic Power Trainer</a>
+            <a href="inflammation-audit.html" data-i18n="tool3_title">Inflammation Audit</a>
+            <a href="desk-reset.html" data-i18n="tool5_title">Desk Reset Protocol</a>
+            <a href="supplements.html" data-i18n="tool6_title">Supplement Reality Library</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_resources">Resources</h4>
+          <div class="footer-links">
+            <a href="guides/prostate-101.html" data-i18n="footer_res_prostate101">Prostate 101</a>
+            <a href="guides/longevity-plan.html" data-i18n="footer_res_longevity">Longevity Plan</a>
+            <a href="about.html" data-i18n="footer_res_about">About Us</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_legal">Legal</h4>
+          <div class="footer-links">
+            <a href="privacy.html" data-i18n="footer_legal_privacy">Privacy Policy</a>
+            <a href="accessibility.html" data-i18n="footer_legal_access">Accessibility</a>
+            <a href="safety.html" data-i18n="footer_legal_disclaimer">Medical Disclaimer</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_copy">&copy; 2025 ProstateAdvice.com. Educational resource. Not medical advice.</p>
+        <p style="font-size:var(--text-xs);max-width:500px;" data-i18n="footer_disclaimer">This site provides educational information only. It is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== DISCLAIMER BAR ===== -->
+  <div class="disclaimer-bar" role="alert">
+    <div class="disclaimer-bar-inner">
+      <p data-i18n="disclaimer_text">This site is for educational purposes only and does not provide medical advice. All data stays on your device.</p>
+      <button class="btn btn-primary btn-sm" data-accept data-i18n="disclaimer_accept">I Understand</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+  // ============================================
+  // Inflammation Audit — Quiz Logic
+  // ============================================
+  (function() {
+    'use strict';
+
+    const audit = document.getElementById('inflammation-audit');
+    const resultsContainer = document.getElementById('audit-results');
+    if (!audit || !resultsContainer) return;
+
+    const TOTAL_QUESTIONS = 6;
+    const MAX_SCORE = 24;
+    let currentStep = 0;
+    const answers = new Array(TOTAL_QUESTIONS).fill(null);
+    const steps = audit.querySelectorAll('.audit-step');
+    const progressFill = document.getElementById('audit-progress');
+    const progressText = audit.querySelector('.audit-progress-text');
+
+    // i18n helper — use PA.t if available, fallback to key
+    function t(key) {
+      return (typeof PA !== 'undefined' && PA.t) ? PA.t(key) : key;
+    }
+
+    // ---- Translations for this page ----
+    // These extend the PA translations object if it exists
+    const pageTranslations = {
+      en: {
+        ia_hero_label: '3-Minute Assessment',
+        ia_hero_title: 'Prostate Inflammation Audit',
+        ia_hero_desc: 'Evaluate your chronic inflammation risk across six key lifestyle factors. Get a personalized risk tier and an actionable recovery protocol.',
+        ia_progress_default: 'Question 1 of 6',
+        ia_cat_diet: 'Diet',
+        ia_cat_alcohol: 'Alcohol',
+        ia_cat_sitting: 'Sitting',
+        ia_cat_sleep: 'Sleep',
+        ia_cat_stress: 'Stress',
+        ia_cat_exercise: 'Exercise',
+        ia_q1: 'How often do you consume ultra-processed foods?',
+        ia_q1_desc: 'Fast food, packaged snacks, sugary drinks, frozen meals, processed meats.',
+        ia_q1_a1: 'Rarely',
+        ia_q1_a2: 'Sometimes',
+        ia_q1_a3: 'Often',
+        ia_q1_a4: 'Daily',
+        ia_q2: 'How frequently do you consume alcohol?',
+        ia_q2_desc: 'Include beer, wine, spirits, and cocktails.',
+        ia_q2_a1: 'Rarely or never',
+        ia_q2_a2: '1-2 drinks per week',
+        ia_q2_a3: '3-5 drinks per week',
+        ia_q2_a4: 'Daily',
+        ia_q3: 'How many hours do you spend sitting each day?',
+        ia_q3_desc: 'Include desk work, commuting, and sedentary leisure time.',
+        ia_q3_a1: 'Under 4 hours',
+        ia_q3_a2: '4-6 hours',
+        ia_q3_a3: '6-8 hours',
+        ia_q3_a4: '8+ hours',
+        ia_q4: 'How much sleep do you consistently get per night?',
+        ia_q4_desc: 'Consider your average over the past 2 weeks.',
+        ia_q4_a1: '7-8 hours consistently',
+        ia_q4_a2: '6-7 hours',
+        ia_q4_a3: '5-6 hours',
+        ia_q4_a4: 'Under 5 hours',
+        ia_q5: 'How would you describe your current stress level?',
+        ia_q5_desc: 'Consider work, relationships, financial, and general life stress.',
+        ia_q5_a1: 'Low',
+        ia_q5_a2: 'Moderate',
+        ia_q5_a3: 'High',
+        ia_q5_a4: 'Very High',
+        ia_q6: 'How often do you exercise per week?',
+        ia_q6_desc: 'Include any intentional physical activity of 20+ minutes (walking, gym, sports, etc.).',
+        ia_q6_a1: '5+ times per week',
+        ia_q6_a2: '3-4 times per week',
+        ia_q6_a3: '1-2 times per week',
+        ia_q6_a4: 'Rarely',
+        ia_next: 'Next',
+        ia_back: 'Back',
+        ia_see_results: 'See My Results',
+        ia_results_title: 'Your Inflammation Audit Results',
+        ia_out_of: 'out of 24',
+        ia_save_results: 'Save My Results',
+        ia_take_again: 'Take Again',
+        ia_saved: 'Results Saved!',
+        ia_question: 'Question',
+        ia_of: 'of',
+        ia_tier_low: 'Low Risk',
+        ia_tier_moderate: 'Moderate',
+        ia_tier_elevated: 'Elevated',
+        ia_tier_high: 'High',
+        ia_tier_low_desc: 'Your lifestyle factors suggest a low chronic inflammation risk. Maintain your current habits and continue monitoring.',
+        ia_tier_moderate_desc: 'Some lifestyle factors may be contributing to mild inflammation. Small adjustments can make a meaningful difference.',
+        ia_tier_elevated_desc: 'Multiple lifestyle factors are contributing to elevated inflammation risk. Focus on the protocol recommendations below.',
+        ia_tier_high_desc: 'Your lifestyle factors indicate a high inflammation risk profile. Prioritize the recovery protocol and consider consulting a healthcare professional.',
+        ia_protocol_pelvic_title: 'Weekly Pelvic Reset',
+        ia_protocol_pelvic_1: '3x/week: 5-min pelvic floor contract-relax routine before bed',
+        ia_protocol_pelvic_2: 'Daily: 2-min standing hip circles after every 90 min of sitting',
+        ia_protocol_pelvic_3: '2x/week: Deep squat hold progression (30s to 2 min)',
+        ia_protocol_pelvic_4: 'Weekend: 20-min walk with diaphragmatic breathing focus',
+        ia_protocol_circ_title: 'Circulation Booster',
+        ia_protocol_circ_1: 'Cold-to-warm shower contrast on lower body (30s cold / 60s warm x 3)',
+        ia_protocol_circ_2: 'Evening walk: 15-20 min brisk pace to improve pelvic blood flow',
+        ia_protocol_circ_3: 'Legs-up-the-wall pose for 5 min before sleep to reduce pelvic congestion',
+        ia_protocol_nutrition_title: 'Nutrition Refinement',
+        ia_protocol_nutrition_1: 'Add 2 servings of cruciferous vegetables daily (broccoli, cauliflower, kale)',
+        ia_protocol_nutrition_2: 'Replace one processed snack per day with a handful of walnuts or pumpkin seeds',
+        ia_protocol_nutrition_3: 'Include lycopene-rich foods 3x/week (cooked tomatoes, watermelon, pink grapefruit)',
+        ia_disclaimer: 'This audit is for educational purposes only and is not a medical diagnosis. It evaluates lifestyle factors associated with chronic inflammation. Consult a healthcare professional for personalized medical advice.'
+      },
+      es: {
+        ia_hero_label: 'Evaluacion de 3 Minutos',
+        ia_hero_title: 'Auditoria de Inflamacion Prostatica',
+        ia_hero_desc: 'Evalua tu riesgo de inflamacion cronica en seis factores clave de estilo de vida. Obtiene un nivel de riesgo personalizado y un protocolo de recuperacion.',
+        ia_progress_default: 'Pregunta 1 de 6',
+        ia_cat_diet: 'Dieta',
+        ia_cat_alcohol: 'Alcohol',
+        ia_cat_sitting: 'Sedentarismo',
+        ia_cat_sleep: 'Sueno',
+        ia_cat_stress: 'Estres',
+        ia_cat_exercise: 'Ejercicio',
+        ia_q1: 'Con que frecuencia consumes alimentos ultraprocesados?',
+        ia_q1_desc: 'Comida rapida, snacks empaquetados, bebidas azucaradas, comidas congeladas, carnes procesadas.',
+        ia_q1_a1: 'Raramente',
+        ia_q1_a2: 'A veces',
+        ia_q1_a3: 'Frecuentemente',
+        ia_q1_a4: 'Diariamente',
+        ia_q2: 'Con que frecuencia consumes alcohol?',
+        ia_q2_desc: 'Incluye cerveza, vino, licores y cocteles.',
+        ia_q2_a1: 'Raramente o nunca',
+        ia_q2_a2: '1-2 bebidas por semana',
+        ia_q2_a3: '3-5 bebidas por semana',
+        ia_q2_a4: 'Diariamente',
+        ia_q3: 'Cuantas horas pasas sentado al dia?',
+        ia_q3_desc: 'Incluye trabajo de escritorio, desplazamientos y tiempo de ocio sedentario.',
+        ia_q3_a1: 'Menos de 4 horas',
+        ia_q3_a2: '4-6 horas',
+        ia_q3_a3: '6-8 horas',
+        ia_q3_a4: '8+ horas',
+        ia_q4: 'Cuantas horas duermes consistentemente por noche?',
+        ia_q4_desc: 'Considera tu promedio de las ultimas 2 semanas.',
+        ia_q4_a1: '7-8 horas consistentemente',
+        ia_q4_a2: '6-7 horas',
+        ia_q4_a3: '5-6 horas',
+        ia_q4_a4: 'Menos de 5 horas',
+        ia_q5: 'Como describirias tu nivel de estres actual?',
+        ia_q5_desc: 'Considera trabajo, relaciones, finanzas y estres general de vida.',
+        ia_q5_a1: 'Bajo',
+        ia_q5_a2: 'Moderado',
+        ia_q5_a3: 'Alto',
+        ia_q5_a4: 'Muy Alto',
+        ia_q6: 'Con que frecuencia haces ejercicio por semana?',
+        ia_q6_desc: 'Incluye cualquier actividad fisica intencional de 20+ minutos (caminar, gimnasio, deportes, etc.).',
+        ia_q6_a1: '5+ veces por semana',
+        ia_q6_a2: '3-4 veces por semana',
+        ia_q6_a3: '1-2 veces por semana',
+        ia_q6_a4: 'Raramente',
+        ia_next: 'Siguiente',
+        ia_back: 'Atras',
+        ia_see_results: 'Ver Mis Resultados',
+        ia_results_title: 'Resultados de Tu Auditoria de Inflamacion',
+        ia_out_of: 'de 24',
+        ia_save_results: 'Guardar Mis Resultados',
+        ia_take_again: 'Repetir',
+        ia_saved: 'Resultados Guardados!',
+        ia_question: 'Pregunta',
+        ia_of: 'de',
+        ia_tier_low: 'Riesgo Bajo',
+        ia_tier_moderate: 'Moderado',
+        ia_tier_elevated: 'Elevado',
+        ia_tier_high: 'Alto',
+        ia_tier_low_desc: 'Tus factores de estilo de vida sugieren un riesgo bajo de inflamacion cronica. Mantiene tus habitos actuales y sigue monitoreando.',
+        ia_tier_moderate_desc: 'Algunos factores de estilo de vida pueden estar contribuyendo a una inflamacion leve. Pequenos ajustes pueden hacer una diferencia significativa.',
+        ia_tier_elevated_desc: 'Multiples factores de estilo de vida contribuyen a un riesgo elevado de inflamacion. Concentrarte en las recomendaciones del protocolo.',
+        ia_tier_high_desc: 'Tus factores de estilo de vida indican un perfil de alto riesgo de inflamacion. Prioriza el protocolo de recuperacion y considera consultar a un profesional de la salud.',
+        ia_protocol_pelvic_title: 'Reset Pelvico Semanal',
+        ia_protocol_pelvic_1: '3x/semana: Rutina de contraccion-relajacion del suelo pelvico de 5 min antes de dormir',
+        ia_protocol_pelvic_2: 'Diario: Circulos de cadera de 2 min de pie despues de cada 90 min sentado',
+        ia_protocol_pelvic_3: '2x/semana: Progresion de sentadilla profunda mantenida (30s a 2 min)',
+        ia_protocol_pelvic_4: 'Fin de semana: Caminata de 20 min con enfoque en respiracion diafragmatica',
+        ia_protocol_circ_title: 'Impulsor de Circulacion',
+        ia_protocol_circ_1: 'Contraste de ducha fria-caliente en la parte inferior del cuerpo (30s frio / 60s caliente x 3)',
+        ia_protocol_circ_2: 'Caminata nocturna: 15-20 min a paso rapido para mejorar el flujo sanguineo pelvico',
+        ia_protocol_circ_3: 'Piernas en la pared 5 min antes de dormir para reducir la congestion pelvica',
+        ia_protocol_nutrition_title: 'Refinamiento Nutricional',
+        ia_protocol_nutrition_1: 'Agrega 2 porciones de vegetales cruciferos diarios (brocoli, coliflor, col rizada)',
+        ia_protocol_nutrition_2: 'Reemplaza un snack procesado al dia por un punado de nueces o semillas de calabaza',
+        ia_protocol_nutrition_3: 'Incluye alimentos ricos en licopeno 3x/semana (tomates cocidos, sandia, pomelo rosado)',
+        ia_disclaimer: 'Esta auditoria es solo para fines educativos y no es un diagnostico medico. Evalua factores de estilo de vida asociados con la inflamacion cronica. Consulta a un profesional de la salud para asesoramiento medico personalizado.'
+      },
+      fr: {
+        ia_hero_label: 'Evaluation de 3 Minutes',
+        ia_hero_title: 'Audit d\'Inflammation Prostatique',
+        ia_hero_desc: 'Evaluez votre risque d\'inflammation chronique sur six facteurs cles de style de vie. Obtenez un niveau de risque personnalise et un protocole de recuperation.',
+        ia_progress_default: 'Question 1 de 6',
+        ia_cat_diet: 'Alimentation',
+        ia_cat_alcohol: 'Alcool',
+        ia_cat_sitting: 'Sedentarite',
+        ia_cat_sleep: 'Sommeil',
+        ia_cat_stress: 'Stress',
+        ia_cat_exercise: 'Exercice',
+        ia_q1: 'A quelle frequence consommez-vous des aliments ultra-transformes ?',
+        ia_q1_desc: 'Restauration rapide, snacks emballes, boissons sucrees, plats surgeles, viandes transformees.',
+        ia_q1_a1: 'Rarement',
+        ia_q1_a2: 'Parfois',
+        ia_q1_a3: 'Souvent',
+        ia_q1_a4: 'Quotidiennement',
+        ia_q2: 'A quelle frequence consommez-vous de l\'alcool ?',
+        ia_q2_desc: 'Incluez la biere, le vin, les spiritueux et les cocktails.',
+        ia_q2_a1: 'Rarement ou jamais',
+        ia_q2_a2: '1-2 verres par semaine',
+        ia_q2_a3: '3-5 verres par semaine',
+        ia_q2_a4: 'Quotidiennement',
+        ia_q3: 'Combien d\'heures restez-vous assis par jour ?',
+        ia_q3_desc: 'Incluez le travail de bureau, les deplacements et les loisirs sedentaires.',
+        ia_q3_a1: 'Moins de 4 heures',
+        ia_q3_a2: '4-6 heures',
+        ia_q3_a3: '6-8 heures',
+        ia_q3_a4: '8+ heures',
+        ia_q4: 'Combien d\'heures de sommeil obtenez-vous regulierement par nuit ?',
+        ia_q4_desc: 'Considerez votre moyenne des 2 dernieres semaines.',
+        ia_q4_a1: '7-8 heures regulierement',
+        ia_q4_a2: '6-7 heures',
+        ia_q4_a3: '5-6 heures',
+        ia_q4_a4: 'Moins de 5 heures',
+        ia_q5: 'Comment decririez-vous votre niveau de stress actuel ?',
+        ia_q5_desc: 'Considerez le travail, les relations, les finances et le stress general.',
+        ia_q5_a1: 'Faible',
+        ia_q5_a2: 'Modere',
+        ia_q5_a3: 'Eleve',
+        ia_q5_a4: 'Tres eleve',
+        ia_q6: 'A quelle frequence faites-vous de l\'exercice par semaine ?',
+        ia_q6_desc: 'Incluez toute activite physique intentionnelle de 20+ minutes (marche, gym, sports, etc.).',
+        ia_q6_a1: '5+ fois par semaine',
+        ia_q6_a2: '3-4 fois par semaine',
+        ia_q6_a3: '1-2 fois par semaine',
+        ia_q6_a4: 'Rarement',
+        ia_next: 'Suivant',
+        ia_back: 'Retour',
+        ia_see_results: 'Voir Mes Resultats',
+        ia_results_title: 'Resultats de Votre Audit d\'Inflammation',
+        ia_out_of: 'sur 24',
+        ia_save_results: 'Sauvegarder Mes Resultats',
+        ia_take_again: 'Refaire',
+        ia_saved: 'Resultats Sauvegardes !',
+        ia_question: 'Question',
+        ia_of: 'de',
+        ia_tier_low: 'Risque Faible',
+        ia_tier_moderate: 'Modere',
+        ia_tier_elevated: 'Eleve',
+        ia_tier_high: 'Haut',
+        ia_tier_low_desc: 'Vos facteurs de style de vie suggerent un faible risque d\'inflammation chronique. Maintenez vos habitudes actuelles et continuez a surveiller.',
+        ia_tier_moderate_desc: 'Certains facteurs de style de vie peuvent contribuer a une inflammation legere. De petits ajustements peuvent faire une difference significative.',
+        ia_tier_elevated_desc: 'Plusieurs facteurs de style de vie contribuent a un risque d\'inflammation eleve. Concentrez-vous sur les recommandations du protocole ci-dessous.',
+        ia_tier_high_desc: 'Vos facteurs de style de vie indiquent un profil de risque d\'inflammation eleve. Priorisez le protocole de recuperation et envisagez de consulter un professionnel de la sante.',
+        ia_protocol_pelvic_title: 'Reset Pelvien Hebdomadaire',
+        ia_protocol_pelvic_1: '3x/semaine : Routine de contraction-relaxation du plancher pelvien de 5 min avant le coucher',
+        ia_protocol_pelvic_2: 'Quotidien : Cercles de hanches de 2 min debout apres chaque 90 min assis',
+        ia_protocol_pelvic_3: '2x/semaine : Progression du squat profond maintenu (30s a 2 min)',
+        ia_protocol_pelvic_4: 'Week-end : Marche de 20 min avec focus sur la respiration diaphragmatique',
+        ia_protocol_circ_title: 'Stimulateur de Circulation',
+        ia_protocol_circ_1: 'Douche contrastee froid-chaud sur le bas du corps (30s froid / 60s chaud x 3)',
+        ia_protocol_circ_2: 'Marche du soir : 15-20 min a rythme soutenu pour ameliorer le flux sanguin pelvien',
+        ia_protocol_circ_3: 'Posture jambes-au-mur 5 min avant le sommeil pour reduire la congestion pelvienne',
+        ia_protocol_nutrition_title: 'Raffinement Nutritionnel',
+        ia_protocol_nutrition_1: 'Ajoutez 2 portions de legumes cruciferes quotidiennement (brocoli, chou-fleur, chou frise)',
+        ia_protocol_nutrition_2: 'Remplacez un snack transforme par jour par une poignee de noix ou de graines de citrouille',
+        ia_protocol_nutrition_3: 'Incluez des aliments riches en lycopene 3x/semaine (tomates cuites, pasteque, pamplemousse rose)',
+        ia_disclaimer: 'Cet audit est a but educatif uniquement et ne constitue pas un diagnostic medical. Il evalue les facteurs de style de vie associes a l\'inflammation chronique. Consultez un professionnel de la sante pour un avis medical personnalise.'
+      }
+    };
+
+    // Inject page-specific translations into PA's translations if available
+    // This is done by checking if the PA object has an internal way to extend translations.
+    // Since we cannot modify PA's internal translations, we override the t function locally.
+    function tLocal(key) {
+      // Determine current language from the html lang attribute
+      var lang = document.documentElement.lang || 'en';
+      if (pageTranslations[lang] && pageTranslations[lang][key]) {
+        return pageTranslations[lang][key];
+      }
+      if (pageTranslations.en && pageTranslations.en[key]) {
+        return pageTranslations.en[key];
+      }
+      // fallback to PA.t
+      if (typeof PA !== 'undefined' && PA.t) {
+        return PA.t(key);
+      }
+      return key;
+    }
+
+    // Observe language changes to re-translate page-specific elements
+    var langObserver = new MutationObserver(function() {
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (key.startsWith('ia_')) {
+          el.textContent = tLocal(key);
+        }
+      });
+    });
+    langObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+
+    // ---- Show step ----
+    function showStep(idx) {
+      steps.forEach(function(s, i) {
+        s.classList.toggle('active', i === idx);
+      });
+      if (progressFill) {
+        progressFill.style.width = ((idx + 1) / TOTAL_QUESTIONS * 100) + '%';
+      }
+      if (progressText) {
+        progressText.textContent = tLocal('ia_question') + ' ' + (idx + 1) + ' ' + tLocal('ia_of') + ' ' + TOTAL_QUESTIONS;
+      }
+      // Scroll to top of audit
+      audit.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // ---- Option selection ----
+    audit.querySelectorAll('.quiz-option').forEach(function(opt) {
+      opt.addEventListener('click', function() {
+        var stepEl = opt.closest('.audit-step');
+        var stepIdx = parseInt(stepEl.dataset.step);
+        stepEl.querySelectorAll('.quiz-option').forEach(function(o) { o.classList.remove('selected'); });
+        opt.classList.add('selected');
+        answers[stepIdx] = parseInt(opt.dataset.value);
+      });
+
+      // Keyboard support
+      opt.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          opt.click();
+        }
+      });
+    });
+
+    // ---- Next buttons ----
+    audit.querySelectorAll('[data-audit-next]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (answers[currentStep] === null) {
+          // Shake unanswered options to indicate selection needed
+          var opts = steps[currentStep].querySelectorAll('.quiz-option');
+          opts.forEach(function(o) {
+            o.style.animation = 'none';
+            o.offsetHeight; // reflow
+            o.style.animation = '';
+          });
+          return;
+        }
+        currentStep++;
+        showStep(currentStep);
+      });
+    });
+
+    // ---- Back buttons ----
+    audit.querySelectorAll('[data-audit-back]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (currentStep > 0) {
+          currentStep--;
+          showStep(currentStep);
+        }
+      });
+    });
+
+    // ---- Submit button ----
+    audit.querySelectorAll('[data-audit-submit]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (answers[currentStep] === null) return;
+        showResults();
+      });
+    });
+
+    // ---- Show results ----
+    function showResults() {
+      var total = answers.reduce(function(sum, v) { return sum + (v || 0); }, 0);
+      var pct = total / MAX_SCORE;
+
+      // Determine tier
+      var tier, tierClass, tierDescKey, strokeColor;
+      if (total >= 20) {
+        tier = tLocal('ia_tier_low');
+        tierClass = 'tier-low';
+        tierDescKey = 'ia_tier_low_desc';
+        strokeColor = '#22C55E';
+      } else if (total >= 15) {
+        tier = tLocal('ia_tier_moderate');
+        tierClass = 'tier-moderate';
+        tierDescKey = 'ia_tier_moderate_desc';
+        strokeColor = '#3B82F6';
+      } else if (total >= 10) {
+        tier = tLocal('ia_tier_elevated');
+        tierClass = 'tier-elevated';
+        tierDescKey = 'ia_tier_elevated_desc';
+        strokeColor = '#F59E0B';
+      } else {
+        tier = tLocal('ia_tier_high');
+        tierClass = 'tier-high';
+        tierDescKey = 'ia_tier_high_desc';
+        strokeColor = '#EF4444';
+      }
+
+      // Hide audit widget, show results
+      audit.style.display = 'none';
+      resultsContainer.classList.add('active');
+
+      // Animate gauge
+      var gaugeFill = document.getElementById('gauge-fill');
+      var gaugeScore = document.getElementById('gauge-score');
+      var circumference = 2 * Math.PI * 90; // radius = 90
+
+      if (gaugeFill) {
+        gaugeFill.style.strokeDasharray = circumference;
+        gaugeFill.style.stroke = strokeColor;
+        setTimeout(function() {
+          gaugeFill.style.strokeDashoffset = circumference * (1 - pct);
+        }, 100);
+      }
+
+      // Animate score counter
+      if (gaugeScore) {
+        var current = 0;
+        var interval = setInterval(function() {
+          current++;
+          if (current >= total) {
+            current = total;
+            clearInterval(interval);
+          }
+          gaugeScore.textContent = current;
+        }, 50);
+      }
+
+      // Set tier badge
+      var tierBadge = document.getElementById('tier-badge');
+      if (tierBadge) {
+        tierBadge.className = 'tier-badge-large ' + tierClass;
+        tierBadge.textContent = tier;
+      }
+
+      // Set tier description
+      var tierDesc = document.getElementById('tier-description');
+      if (tierDesc) {
+        tierDesc.textContent = tLocal(tierDescKey);
+      }
+
+      // Scroll to results
+      resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // ---- Save results ----
+    var saveBtn = document.getElementById('save-results-btn');
+    if (saveBtn) {
+      saveBtn.addEventListener('click', function() {
+        var total = answers.reduce(function(sum, v) { return sum + (v || 0); }, 0);
+        var tier;
+        if (total >= 20) tier = 'low';
+        else if (total >= 15) tier = 'moderate';
+        else if (total >= 10) tier = 'elevated';
+        else tier = 'high';
+
+        var resultData = {
+          type: 'inflammation-audit',
+          score: total,
+          maxScore: MAX_SCORE,
+          tier: tier,
+          answers: answers.slice(),
+          categories: ['diet', 'alcohol', 'sitting', 'sleep', 'stress', 'exercise']
+        };
+
+        if (typeof PA_Storage !== 'undefined') {
+          PA_Storage.saveScore(resultData);
+        }
+
+        saveBtn.textContent = tLocal('ia_saved');
+        saveBtn.disabled = true;
+        saveBtn.classList.remove('btn-primary');
+        saveBtn.classList.add('btn-ghost');
+
+        setTimeout(function() {
+          saveBtn.textContent = tLocal('ia_save_results');
+          saveBtn.disabled = false;
+          saveBtn.classList.remove('btn-ghost');
+          saveBtn.classList.add('btn-primary');
+        }, 3000);
+      });
+    }
+
+    // ---- Retake / Take Again ----
+    var retakeBtn = document.getElementById('retake-btn');
+    if (retakeBtn) {
+      retakeBtn.addEventListener('click', function() {
+        // Reset state
+        currentStep = 0;
+        answers.fill(null);
+        audit.querySelectorAll('.quiz-option').forEach(function(o) {
+          o.classList.remove('selected');
+        });
+
+        // Reset gauge
+        var gaugeFill = document.getElementById('gauge-fill');
+        if (gaugeFill) {
+          gaugeFill.style.strokeDashoffset = 2 * Math.PI * 90;
+        }
+        var gaugeScore = document.getElementById('gauge-score');
+        if (gaugeScore) gaugeScore.textContent = '0';
+
+        // Hide results, show audit
+        resultsContainer.classList.remove('active');
+        audit.style.display = '';
+
+        showStep(0);
+        audit.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
+    // Initialize first step
+    showStep(0);
+  })();
+  </script>
+</body>
+</html>
