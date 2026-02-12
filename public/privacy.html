@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Privacy Center — ProstateAdvice</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="ProstateAdvice Privacy Center. We do not sell intimate health data. All data stored locally on your device. No accounts, no tracking cookies. Export or delete anytime.">
+  <meta name="keywords" content="prostateadvice privacy, health data privacy, local storage, no tracking, data export, data deletion, privacy-first health">
+  <meta name="author" content="ProstateAdvice.com">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://prostateadvice.com/privacy.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://prostateadvice.com/privacy.html">
+  <meta property="og:title" content="Privacy Center — ProstateAdvice">
+  <meta property="og:description" content="We do not sell intimate health data. Period. All data stored locally on your device. Export or delete anytime.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1563986768609-322da13575f2?w=1200&h=630&fit=crop&q=80">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Center — ProstateAdvice">
+  <meta name="twitter:description" content="We do not sell intimate health data. Period. All data stays on your device.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1563986768609-322da13575f2?w=1200&h=630&fit=crop&q=80">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Privacy Center",
+    "description": "ProstateAdvice privacy policy and data management. All data stored locally, no tracking, export or delete anytime.",
+    "url": "https://prostateadvice.com/privacy.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "ProstateAdvice",
+      "url": "https://prostateadvice.com"
+    }
+  }
+  </script>
+
+  <!-- Preload critical assets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/themes.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
+  <style>
+    /* Page-specific: Privacy hero (small) */
+    .privacy-hero {
+      position: relative;
+      padding-top: calc(var(--navbar-height) + var(--space-12));
+      padding-bottom: var(--space-12);
+      overflow: hidden;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .privacy-hero { min-height: 380px; }
+    }
+    .privacy-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+    .privacy-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .privacy-hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 74, 51, 0.92) 0%,
+        rgba(27, 107, 74, 0.85) 40%,
+        rgba(42, 157, 110, 0.75) 100%
+      );
+    }
+    [data-theme="dark"] .privacy-hero-overlay {
+      background: linear-gradient(
+        135deg,
+        rgba(10, 15, 20, 0.95) 0%,
+        rgba(15, 25, 18, 0.9) 50%,
+        rgba(10, 20, 15, 0.85) 100%
+      );
+    }
+    .privacy-hero-content {
+      position: relative;
+      z-index: 1;
+      color: var(--color-white);
+      max-width: 640px;
+    }
+    .privacy-hero-content h1 {
+      color: var(--color-white);
+      margin-bottom: var(--space-4);
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+    .privacy-hero-content p {
+      color: rgba(255,255,255,0.85);
+      font-size: var(--text-lg);
+      line-height: var(--line-height-relaxed);
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+
+    /* Core promise callout */
+    .privacy-promise {
+      background: linear-gradient(135deg, var(--color-primary-50), transparent);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      line-height: var(--line-height-tight);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    [data-theme="dark"] .privacy-promise {
+      background: linear-gradient(135deg, rgba(74, 222, 128, 0.08), transparent);
+    }
+
+    /* Privacy principle cards */
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+    @media (min-width: 640px) {
+      .privacy-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .privacy-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .privacy-card {
+      background: var(--surface-card);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      border: 1px solid var(--color-gray-200);
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    }
+    [data-theme="dark"] .privacy-card {
+      border-color: rgba(255,255,255,0.08);
+    }
+    .privacy-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--color-primary-300);
+    }
+    .privacy-card-num {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-50);
+      color: var(--color-primary);
+      border-radius: var(--radius-full);
+      font-weight: var(--font-weight-bold);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-4);
+    }
+    [data-theme="dark"] .privacy-card-num {
+      background: rgba(74, 222, 128, 0.1);
+    }
+    .privacy-card h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-2);
+    }
+    .privacy-card p {
+      color: var(--text-secondary);
+      font-size: var(--text-sm);
+      line-height: var(--line-height-relaxed);
+    }
+
+    /* How data works section */
+    .data-flow {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+      .data-flow { grid-template-columns: repeat(3, 1fr); }
+    }
+    .data-flow-step {
+      text-align: center;
+      position: relative;
+    }
+    .data-flow-icon {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-50);
+      color: var(--color-primary);
+      border-radius: var(--radius-full);
+      margin: 0 auto var(--space-4);
+    }
+    [data-theme="dark"] .data-flow-icon {
+      background: rgba(74, 222, 128, 0.1);
+    }
+    .data-flow-step h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-2);
+    }
+    .data-flow-step p {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: var(--line-height-relaxed);
+    }
+    @media (min-width: 768px) {
+      .data-flow-step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 32px;
+        right: -15%;
+        width: 30%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--color-primary-300), transparent);
+      }
+    }
+
+    /* Data management panel */
+    .data-panel {
+      background: var(--surface-card);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-8);
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    [data-theme="dark"] .data-panel {
+      border-color: rgba(255,255,255,0.08);
+    }
+    .data-panel h3 {
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-2);
+    }
+    .data-panel p {
+      color: var(--text-secondary);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-6);
+    }
+    .data-actions {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .data-status {
+      margin-top: var(--space-4);
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-lg);
+      font-size: var(--text-sm);
+      font-weight: var(--font-weight-medium);
+      display: none;
+    }
+    .data-status.success {
+      display: block;
+      background: var(--color-success-light);
+      color: #166534;
+    }
+    .data-status.error {
+      display: block;
+      background: var(--color-danger-light);
+      color: #991B1B;
+    }
+
+    /* Cookie note */
+    .cookie-note {
+      background: var(--surface-card);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+    }
+    [data-theme="dark"] .cookie-note {
+      border-color: rgba(255,255,255,0.08);
+    }
+    .cookie-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-50);
+      color: var(--color-primary);
+      border-radius: var(--radius-lg);
+      flex-shrink: 0;
+    }
+    [data-theme="dark"] .cookie-icon {
+      background: rgba(74, 222, 128, 0.1);
+    }
+    .cookie-note h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-1);
+    }
+    .cookie-note p {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: var(--line-height-relaxed);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Skip to content (accessibility) -->
+  <a href="#main" class="sr-only" data-i18n="skip_to_content" style="position:absolute;top:-40px;left:0;background:var(--color-primary);color:white;padding:8px 16px;z-index:9999;transition:top 0.3s;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand" aria-label="ProstateAdvice Home">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="currentColor"/>
+          <path d="M16 6C11.58 6 8 9.58 8 14c0 3.07 1.72 5.74 4.25 7.08L16 26l3.75-4.92C22.28 19.74 24 17.07 24 14c0-4.42-3.58-8-8-8z" fill="white" opacity="0.9"/>
+          <circle cx="16" cy="13" r="3" fill="currentColor"/>
+        </svg>
+        <span>ProstateAdvice</span>
+      </a>
+      <div class="navbar-nav">
+        <a href="/" class="nav-link" data-i18n="nav_home">Home</a>
+        <a href="strength-score.html" class="nav-link" data-i18n="nav_score">Strength Score</a>
+        <a href="pelvic-power.html" class="nav-link" data-i18n="nav_pelvic">Pelvic Power</a>
+        <a href="inflammation-audit.html" class="nav-link" data-i18n="nav_inflammation">Inflammation Audit</a>
+        <a href="desk-reset.html" class="nav-link" data-i18n="nav_desk">Desk Reset</a>
+        <a href="supplements.html" class="nav-link" data-i18n="nav_supplements">Supplements</a>
+        <a href="safety.html" class="nav-link" data-i18n="nav_safety">Safety</a>
+      </div>
+      <div class="navbar-actions">
+        <div class="lang-switcher" role="group" aria-label="Language selector">
+          <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+          <button class="lang-btn" data-lang="es" aria-label="Espa&ntilde;ol">ES</button>
+          <button class="lang-btn" data-lang="fr" aria-label="Fran&ccedil;ais">FR</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="/" data-i18n="nav_home">Home</a>
+    <a href="strength-score.html" data-i18n="nav_score">Strength Score</a>
+    <a href="pelvic-power.html" data-i18n="nav_pelvic">Pelvic Power</a>
+    <a href="inflammation-audit.html" data-i18n="nav_inflammation">Inflammation Audit</a>
+    <a href="sexual-longevity.html" data-i18n="nav_longevity">Sexual Longevity</a>
+    <a href="desk-reset.html" data-i18n="nav_desk">Desk Reset</a>
+    <a href="supplements.html" data-i18n="nav_supplements">Supplements</a>
+    <a href="safety.html" data-i18n="nav_safety">Safety</a>
+    <a href="about.html" data-i18n="nav_about">About</a>
+  </div>
+
+  <main id="main">
+    <!-- ===== HERO (Small) ===== -->
+    <section class="privacy-hero" aria-labelledby="privacy-hero-title">
+      <div class="privacy-hero-bg">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f2?w=1600&h=500&fit=crop&q=80"
+             alt="Secure padlock representing data privacy and protection"
+             width="1600" height="500"
+             loading="eager"
+             fetchpriority="high">
+      </div>
+      <div class="privacy-hero-overlay"></div>
+      <div class="container">
+        <div class="privacy-hero-content">
+          <span class="hero-label" data-i18n="privacy_hero_label">Your Data, Your Control</span>
+          <h1 id="privacy-hero-title" data-i18n="privacy_hero_title">Privacy Center</h1>
+          <p data-i18n="privacy_hero_text">Your health data is intimate and personal. We designed ProstateAdvice so that your data never leaves your device&mdash;no exceptions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CORE PROMISE ===== -->
+    <section class="section" aria-labelledby="promise-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="privacy_promise_label">Our Promise</span>
+          <h2 id="promise-title" class="section-title" data-i18n="privacy_promise_title">Privacy by Design</h2>
+        </div>
+        <div data-animate data-animate-delay="1">
+          <div class="privacy-promise" data-i18n="privacy_promise_quote">
+            &ldquo;We do not sell intimate health data. Period.&rdquo;
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRIVACY PRINCIPLES ===== -->
+    <section class="section section-alt" aria-labelledby="principles-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="privacy_principles_label">Principles</span>
+          <h2 id="principles-title" class="section-title" data-i18n="privacy_principles_title">Six Privacy Commitments</h2>
+          <p class="section-subtitle" data-i18n="privacy_principles_subtitle">Every decision we make starts with protecting your privacy.</p>
+        </div>
+        <div class="privacy-grid">
+          <div class="privacy-card" data-animate data-animate-delay="1">
+            <div class="privacy-card-num" aria-hidden="true">1</div>
+            <h3 data-i18n="privacy_c1_title">Anonymous-First</h3>
+            <p data-i18n="privacy_c1_text">No account required. No email, no name, no personal identifiers. You use the tools completely anonymously.</p>
+          </div>
+          <div class="privacy-card" data-animate data-animate-delay="2">
+            <div class="privacy-card-num" aria-hidden="true">2</div>
+            <h3 data-i18n="privacy_c2_title">Local-Only Mode</h3>
+            <p data-i18n="privacy_c2_text">All your assessment results, training history, and preferences are stored exclusively on your device using browser storage.</p>
+          </div>
+          <div class="privacy-card" data-animate data-animate-delay="3">
+            <div class="privacy-card-num" aria-hidden="true">3</div>
+            <h3 data-i18n="privacy_c3_title">Export Anytime</h3>
+            <p data-i18n="privacy_c3_text">Download all your data as a JSON file at any time. Full transparency over what is stored and in what format.</p>
+          </div>
+          <div class="privacy-card" data-animate data-animate-delay="1">
+            <div class="privacy-card-num" aria-hidden="true">4</div>
+            <h3 data-i18n="privacy_c4_title">Delete Anytime</h3>
+            <p data-i18n="privacy_c4_text">One-click wipe of all stored data. No hidden backups, no data retention policies, no server-side copies.</p>
+          </div>
+          <div class="privacy-card" data-animate data-animate-delay="2">
+            <div class="privacy-card-num" aria-hidden="true">5</div>
+            <h3 data-i18n="privacy_c5_title">No Ad Trackers</h3>
+            <p data-i18n="privacy_c5_text">We run zero advertising trackers on health tool pages. No Google Ads, no Facebook Pixel, no retargeting scripts.</p>
+          </div>
+          <div class="privacy-card" data-animate data-animate-delay="3">
+            <div class="privacy-card-num" aria-hidden="true">6</div>
+            <h3 data-i18n="privacy_c6_title">No Selling of Data</h3>
+            <p data-i18n="privacy_c6_text">We will never sell, trade, or share your health data with third parties. This is a non-negotiable commitment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW YOUR DATA WORKS ===== -->
+    <section class="section" aria-labelledby="dataflow-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="privacy_flow_label">Technical Details</span>
+          <h2 id="dataflow-title" class="section-title" data-i18n="privacy_flow_title">How Your Data Works</h2>
+          <p class="section-subtitle" data-i18n="privacy_flow_subtitle">A transparent look at the browser technologies we use to keep your data private.</p>
+        </div>
+        <div class="data-flow" data-animate data-animate-delay="1">
+          <div class="data-flow-step">
+            <div class="data-flow-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h4 data-i18n="privacy_flow1_title">localStorage</h4>
+            <p data-i18n="privacy_flow1_text">Simple preferences like your language, theme, and disclaimer acceptance are saved in your browser's localStorage. This data never leaves your device.</p>
+          </div>
+          <div class="data-flow-step">
+            <div class="data-flow-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <h4 data-i18n="privacy_flow2_title">IndexedDB</h4>
+            <p data-i18n="privacy_flow2_text">Structured data like assessment scores, training check-ins, and history are stored in IndexedDB, a browser database. It supports larger datasets while staying completely local.</p>
+          </div>
+          <div class="data-flow-step">
+            <div class="data-flow-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4 data-i18n="privacy_flow3_title">Zero Server Calls</h4>
+            <p data-i18n="privacy_flow3_text">No data is transmitted to any server. The site is static HTML, CSS, and JavaScript. Your browser does all the processing locally.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DATA MANAGEMENT ===== -->
+    <section class="section section-alt" aria-labelledby="manage-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="privacy_manage_label">Your Control</span>
+          <h2 id="manage-title" class="section-title" data-i18n="privacy_manage_title">Manage Your Data</h2>
+          <p class="section-subtitle" data-i18n="privacy_manage_subtitle">Export everything or delete it all. The choice is always yours.</p>
+        </div>
+        <div class="data-panel" data-animate data-animate-delay="1">
+          <h3 data-i18n="privacy_panel_title">Data Management</h3>
+          <p data-i18n="privacy_panel_text">Use the buttons below to export your data as a JSON file or permanently delete all stored data from your browser.</p>
+          <div class="data-actions">
+            <button class="btn btn-primary" id="btn-export-data" aria-label="Export all my data as JSON">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="privacy_btn_export">Export My Data</span>
+            </button>
+            <button class="btn btn-secondary" id="btn-delete-data" style="border-color: #dc2626; color: #dc2626;" aria-label="Delete all my data permanently">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              <span data-i18n="privacy_btn_delete">Delete All Data</span>
+            </button>
+          </div>
+          <div class="data-status" id="data-status" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COOKIE POLICY NOTE ===== -->
+    <section class="section" aria-labelledby="cookie-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="privacy_cookie_label">Cookies</span>
+          <h2 id="cookie-title" class="section-title" data-i18n="privacy_cookie_title">Cookie Policy</h2>
+        </div>
+        <div class="cookie-note" data-animate data-animate-delay="1">
+          <div class="cookie-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          </div>
+          <div>
+            <h4 data-i18n="privacy_cookie_heading">No Tracking Cookies</h4>
+            <p data-i18n="privacy_cookie_text">We use no tracking cookies. Only functional browser storage (localStorage and IndexedDB) is used to power your tools, save your preferences, and store your assessment history. This data is never sent to any server and is fully under your control.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-name">ProstateAdvice</div>
+          <p data-i18n="footer_brand_text">The lifelong prostate strength and performance companion for men 18&ndash;40. Science-grounded. Privacy-first. Zero fear tactics.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_tools">Tools</h4>
+          <div class="footer-links">
+            <a href="strength-score.html" data-i18n="tool1_title">Prostate Strength Score</a>
+            <a href="pelvic-power.html" data-i18n="tool2_title">Pelvic Power Trainer</a>
+            <a href="inflammation-audit.html" data-i18n="tool3_title">Inflammation Audit</a>
+            <a href="desk-reset.html" data-i18n="tool5_title">Desk Reset Protocol</a>
+            <a href="supplements.html" data-i18n="tool6_title">Supplement Reality Library</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_resources">Resources</h4>
+          <div class="footer-links">
+            <a href="guides/prostate-101.html" data-i18n="footer_res_prostate101">Prostate 101</a>
+            <a href="guides/longevity-plan.html" data-i18n="footer_res_longevity">Longevity Plan</a>
+            <a href="about.html" data-i18n="footer_res_about">About Us</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_legal">Legal</h4>
+          <div class="footer-links">
+            <a href="privacy.html" data-i18n="footer_legal_privacy">Privacy Policy</a>
+            <a href="accessibility.html" data-i18n="footer_legal_access">Accessibility</a>
+            <a href="safety.html" data-i18n="footer_legal_disclaimer">Medical Disclaimer</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_copy">&copy; 2025 ProstateAdvice.com. Educational resource. Not medical advice.</p>
+        <p style="font-size:var(--text-xs);max-width:500px;" data-i18n="footer_disclaimer">This site provides educational information only. It is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== DISCLAIMER BAR ===== -->
+  <div class="disclaimer-bar" role="alert">
+    <div class="disclaimer-bar-inner">
+      <p data-i18n="disclaimer_text">This site is for educational purposes only and does not provide medical advice. All data stays on your device.</p>
+      <button class="btn btn-primary btn-sm" data-accept data-i18n="disclaimer_accept">I Understand</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Inline JS for data export/delete -->
+  <script>
+  (function() {
+    'use strict';
+
+    var exportBtn = document.getElementById('btn-export-data');
+    var deleteBtn = document.getElementById('btn-delete-data');
+    var statusEl = document.getElementById('data-status');
+
+    function showStatus(message, type) {
+      if (!statusEl) return;
+      statusEl.textContent = message;
+      statusEl.className = 'data-status ' + type;
+      setTimeout(function() {
+        statusEl.className = 'data-status';
+      }, 5000);
+    }
+
+    if (exportBtn) {
+      exportBtn.addEventListener('click', async function() {
+        try {
+          var data = await PA_Storage.exportAll();
+          var json = JSON.stringify(data, null, 2);
+          var blob = new Blob([json], { type: 'application/json' });
+          var url = URL.createObjectURL(blob);
+          var a = document.createElement('a');
+          a.href = url;
+          a.download = 'prostateadvice-data-' + new Date().toISOString().slice(0, 10) + '.json';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+          showStatus('Data exported successfully. Check your downloads folder.', 'success');
+        } catch (err) {
+          showStatus('Export failed: ' + err.message, 'error');
+        }
+      });
+    }
+
+    if (deleteBtn) {
+      deleteBtn.addEventListener('click', async function() {
+        var confirmed = window.confirm(
+          'Are you sure you want to permanently delete all your ProstateAdvice data? This action cannot be undone.'
+        );
+        if (!confirmed) return;
+        try {
+          await PA_Storage.deleteAll();
+          showStatus('All data has been permanently deleted from your device.', 'success');
+        } catch (err) {
+          showStatus('Deletion failed: ' + err.message, 'error');
+        }
+      });
+    }
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ProstateAdvice — Train Your Prostate Like You Train Your Body</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="The first proactive prostate health platform for men 18–40. Free interactive tools for prostate strength assessment, pelvic floor training, inflammation audit, and longevity planning. Science-grounded, privacy-first.">
+  <meta name="keywords" content="prostate health, prostate strength, pelvic floor exercises men, prostate longevity, men's health 20s 30s, prostate inflammation, pelvic power training, prostate assessment">
+  <meta name="author" content="ProstateAdvice.com">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://prostateadvice.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://prostateadvice.com/">
+  <meta property="og:title" content="ProstateAdvice — Train Your Prostate Like You Train Your Body">
+  <meta property="og:description" content="Free interactive tools for prostate strength, pelvic training, and longevity planning. For men 18–40. Science-grounded, 100% private.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200&h=630&fit=crop&q=80">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ProstateAdvice — Proactive Prostate Health for Men 18–40">
+  <meta name="twitter:description" content="Free interactive tools: Strength Score, Pelvic Trainer, Inflammation Audit. 100% private.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200&h=630&fit=crop&q=80">
+
+  <!-- AEO: Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ProstateAdvice",
+    "alternateName": "ProstateAdvice.com",
+    "url": "https://prostateadvice.com",
+    "description": "The lifelong prostate strength and performance companion for men 18–40.",
+    "inLanguage": ["en", "es", "fr"],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://prostateadvice.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthTopicContent",
+    "name": "Prostate Strength Assessment",
+    "description": "A 5-minute interactive assessment to evaluate prostate health baseline including sleep quality, sitting time, stress levels, and lifestyle factors.",
+    "url": "https://prostateadvice.com/strength-score",
+    "audience": {
+      "@type": "PeopleAudience",
+      "suggestedMinAge": 18,
+      "suggestedMaxAge": 40,
+      "suggestedGender": "male"
+    },
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Prostate Health"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why should men under 40 care about prostate health?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prostate health foundations are built in your 20s and 30s. Chronic inflammation from stress, poor sleep, excessive sitting, and dietary habits can begin early. Proactive habits now protect function for decades."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a Prostate Strength Score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 5-minute self-assessment that evaluates lifestyle factors like sleep quality, sitting time, stress, exercise, and diet to generate a prostate strength tier (Foundational, Developing, Strong, or Elite) with personalized weekly action items."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data private on ProstateAdvice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All data is stored locally on your device using browser storage. No account is required, no data is sent to servers, and you can export or delete your data at any time."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preload critical assets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/themes.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
+  <style>
+    /* Page-specific styles for homepage interactive elements */
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      animation: particleFloat linear infinite;
+    }
+    @keyframes particleFloat {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+    }
+    .how-steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      position: relative;
+    }
+    @media (min-width: 768px) {
+      .how-steps {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .how-step {
+      text-align: center;
+      position: relative;
+    }
+    .how-step-num {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      color: white;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-extrabold);
+      margin: 0 auto var(--space-4);
+      box-shadow: 0 4px 15px rgba(27, 107, 74, 0.3);
+    }
+    .how-step-title {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-2);
+    }
+    .how-step-text {
+      color: var(--text-secondary);
+      font-size: var(--text-sm);
+      line-height: var(--line-height-relaxed);
+    }
+    @media (min-width: 768px) {
+      .how-step::after {
+        content: '';
+        position: absolute;
+        top: 32px;
+        right: -20%;
+        width: 40%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--color-primary-300), transparent);
+      }
+      .how-step:last-child::after { display: none; }
+    }
+
+    /* Tool Cards Grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+    @media (min-width: 640px) {
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .tools-grid { grid-template-columns: repeat(3, 1fr); }
+      .tools-grid .tool-card:last-child {
+        grid-column: 2;
+      }
+    }
+
+    /* Quiz Demo */
+    .quiz-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .quiz-container { grid-template-columns: 1fr 1fr; }
+    }
+    .quiz-visual {
+      position: relative;
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+    }
+    .quiz-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 300px;
+    }
+    .quiz-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(27,107,74,0.4), rgba(42,157,110,0.2));
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: var(--space-6);
+    }
+    .quiz-widget {
+      background: var(--surface-card);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-8);
+      border: 1px solid var(--color-gray-200);
+      box-shadow: var(--shadow-xl);
+    }
+    [data-theme="dark"] .quiz-widget {
+      border-color: rgba(255,255,255,0.08);
+    }
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; }
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      margin: var(--space-6) 0;
+    }
+    .quiz-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-3);
+    }
+    .quiz-result {
+      display: none;
+      text-align: center;
+    }
+    .result-tier {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-bold);
+      margin: var(--space-4) 0;
+    }
+
+    /* Desk reset timer */
+    .desk-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .desk-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .desk-image {
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+    }
+    .desk-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 300px;
+    }
+    .timer-widget {
+      background: var(--surface-card);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-8);
+      border: 1px solid var(--color-gray-200);
+      box-shadow: var(--shadow-lg);
+    }
+    [data-theme="dark"] .timer-widget {
+      border-color: rgba(255,255,255,0.08);
+    }
+    .timer-steps {
+      margin: var(--space-6) 0;
+    }
+    .timer-step {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-3) 0;
+      color: var(--text-secondary);
+      font-size: var(--text-sm);
+      transition: all var(--transition-base);
+    }
+    .timer-step-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-full);
+      border: 2px solid var(--color-gray-300);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-base);
+      margin-top: 2px;
+    }
+    .timer-step.active {
+      color: var(--color-primary);
+      font-weight: var(--font-weight-semibold);
+    }
+    .timer-step.active .timer-step-dot {
+      border-color: var(--color-primary);
+      background: var(--color-primary);
+      box-shadow: 0 0 0 4px rgba(27,107,74,0.2);
+    }
+    .timer-step.active .timer-step-dot::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+    }
+    .timer-step.done .timer-step-dot {
+      border-color: var(--color-success);
+      background: var(--color-success);
+    }
+    .timer-step.done .timer-step-dot::after {
+      content: '✓';
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .timer-step.done {
+      color: var(--color-success);
+    }
+    .timer-complete {
+      display: none;
+      text-align: center;
+      padding: var(--space-4);
+      background: var(--color-success-light);
+      border-radius: var(--radius-lg);
+      color: #166534;
+      font-weight: var(--font-weight-semibold);
+    }
+
+    /* CTA Particles */
+    .cta-banner .particle {
+      background: rgba(255,255,255,0.1);
+      width: 6px;
+      height: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Skip to content (accessibility) -->
+  <a href="#main" class="sr-only" data-i18n="skip_to_content" style="position:absolute;top:-40px;left:0;background:var(--color-primary);color:white;padding:8px 16px;z-index:9999;transition:top 0.3s;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand" aria-label="ProstateAdvice Home">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="currentColor"/>
+          <path d="M16 6C11.58 6 8 9.58 8 14c0 3.07 1.72 5.74 4.25 7.08L16 26l3.75-4.92C22.28 19.74 24 17.07 24 14c0-4.42-3.58-8-8-8z" fill="white" opacity="0.9"/>
+          <circle cx="16" cy="13" r="3" fill="currentColor"/>
+        </svg>
+        <span>ProstateAdvice</span>
+      </a>
+
+      <div class="navbar-nav">
+        <a href="/" class="nav-link active" data-i18n="nav_home">Home</a>
+        <a href="strength-score.html" class="nav-link" data-i18n="nav_score">Strength Score</a>
+        <a href="pelvic-power.html" class="nav-link" data-i18n="nav_pelvic">Pelvic Power</a>
+        <a href="inflammation-audit.html" class="nav-link" data-i18n="nav_inflammation">Inflammation Audit</a>
+        <a href="desk-reset.html" class="nav-link" data-i18n="nav_desk">Desk Reset</a>
+        <a href="supplements.html" class="nav-link" data-i18n="nav_supplements">Supplements</a>
+        <a href="safety.html" class="nav-link" data-i18n="nav_safety">Safety</a>
+      </div>
+
+      <div class="navbar-actions">
+        <div class="lang-switcher" role="group" aria-label="Language selector">
+          <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+          <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
+          <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-i18n-aria="menu_open">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="/" data-i18n="nav_home">Home</a>
+    <a href="strength-score.html" data-i18n="nav_score">Strength Score</a>
+    <a href="pelvic-power.html" data-i18n="nav_pelvic">Pelvic Power</a>
+    <a href="inflammation-audit.html" data-i18n="nav_inflammation">Inflammation Audit</a>
+    <a href="sexual-longevity.html" data-i18n="nav_longevity">Sexual Longevity</a>
+    <a href="desk-reset.html" data-i18n="nav_desk">Desk Reset</a>
+    <a href="supplements.html" data-i18n="nav_supplements">Supplements</a>
+    <a href="safety.html" data-i18n="nav_safety">Safety</a>
+    <a href="about.html" data-i18n="nav_about">About</a>
+  </div>
+
+  <main id="main">
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1600&h=900&fit=crop&q=80"
+             alt="Man exercising outdoors representing proactive health and strength"
+             width="1600" height="900"
+             loading="eager"
+             fetchpriority="high">
+      </div>
+      <div class="hero-overlay"></div>
+
+      <!-- Floating ambient elements -->
+      <div class="hero-float hero-float-1" aria-hidden="true"></div>
+      <div class="hero-float hero-float-2" aria-hidden="true"></div>
+      <div class="hero-float hero-float-3" aria-hidden="true"></div>
+
+      <!-- Particles -->
+      <div class="hero-particles" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-label" data-i18n="hero_label">Proactive Prostate Health for Men 18–40</span>
+          <h1 id="hero-title" class="hero-title">
+            <span data-i18n="hero_title_1">Train Your Prostate</span><br>
+            <span class="highlight" data-i18n="hero_title_2">Like You Train Your Body</span>
+          </h1>
+          <p class="hero-description" data-i18n="hero_description">
+            Build prostate strength early. The first science-grounded platform for proactive prostate longevity, pelvic performance, and hormonal resilience—no fear tactics, no supplement hype.
+          </p>
+          <div class="hero-actions">
+            <a href="#quiz-section" class="btn btn-accent btn-lg" data-i18n="hero_cta_primary">Take the Strength Score</a>
+            <a href="#tools-section" class="btn btn-secondary btn-lg" style="border-color:rgba(255,255,255,0.4);color:white;" data-i18n="hero_cta_secondary">Explore Tools</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-number" data-i18n="hero_stat_1_num">7</div>
+              <div class="hero-stat-label" data-i18n="hero_stat_1_label">Interactive Tools</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number" data-i18n="hero_stat_2_num">5 min</div>
+              <div class="hero-stat-label" data-i18n="hero_stat_2_label">Quick Assessment</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number" data-i18n="hero_stat_3_num">100%</div>
+              <div class="hero-stat-label" data-i18n="hero_stat_3_label">Private & Local</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="section" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="how_label">How It Works</span>
+          <h2 id="how-title" class="section-title" data-i18n="how_title">Your Prostate Strength Journey</h2>
+          <p class="section-subtitle" data-i18n="how_subtitle">Three steps to take control of your prostate health—starting today, no account needed.</p>
+        </div>
+        <div class="how-steps">
+          <div class="how-step" data-animate data-animate-delay="1">
+            <div class="how-step-num">1</div>
+            <h3 class="how-step-title" data-i18n="how_step1_title">Assess Your Baseline</h3>
+            <p class="how-step-text" data-i18n="how_step1_text">Take the 5-minute Prostate Strength Score. Get a personalized tier and actionable recommendations.</p>
+          </div>
+          <div class="how-step" data-animate data-animate-delay="2">
+            <div class="how-step-num">2</div>
+            <h3 class="how-step-title" data-i18n="how_step2_title">Train & Optimize</h3>
+            <p class="how-step-text" data-i18n="how_step2_text">Use our Pelvic Power Trainer, Desk Reset Protocol, and Inflammation Audit to build daily habits.</p>
+          </div>
+          <div class="how-step" data-animate data-animate-delay="3">
+            <div class="how-step-num">3</div>
+            <h3 class="how-step-title" data-i18n="how_step3_title">Track Your Progress</h3>
+            <p class="how-step-text" data-i18n="how_step3_text">Monitor improvements over time. All data stays on your device—export or delete anytime.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INTERACTIVE TOOLS SECTION ===== -->
+    <section id="tools-section" class="section section-alt" aria-labelledby="tools-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="tools_label">Interactive Tools</span>
+          <h2 id="tools-title" class="section-title" data-i18n="tools_title">Your Complete Prostate Toolkit</h2>
+          <p class="section-subtitle" data-i18n="tools_subtitle">Every tool works instantly in your browser. No sign-up. No data leaves your device.</p>
+        </div>
+
+        <div class="tools-grid">
+          <!-- Tool 1: Strength Score -->
+          <a href="strength-score.html" class="tool-card card-interactive" data-animate data-animate-delay="1">
+            <div class="tool-card-image-wrap">
+              <img class="tool-card-image" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop&q=80"
+                   alt="Man working out in gym representing strength assessment"
+                   width="600" height="400" loading="lazy">
+              <div class="tool-card-overlay"></div>
+              <span class="tool-card-number">1</span>
+              <span class="tool-card-time" data-i18n="tool1_time">5 min</span>
+            </div>
+            <div class="tool-card-body">
+              <h3 class="card-title" data-i18n="tool1_title">Prostate Strength Score</h3>
+              <p class="card-text" data-i18n="tool1_text">5-minute assessment that turns confusion into a clear plan with personalized tier and weekly actions.</p>
+            </div>
+          </a>
+
+          <!-- Tool 2: Pelvic Power -->
+          <a href="pelvic-power.html" class="tool-card card-interactive" data-animate data-animate-delay="2">
+            <div class="tool-card-image-wrap">
+              <img class="tool-card-image" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop&q=80"
+                   alt="Yoga and stretching pose for pelvic floor training"
+                   width="600" height="400" loading="lazy">
+              <div class="tool-card-overlay"></div>
+              <span class="tool-card-number">2</span>
+              <span class="tool-card-time" data-i18n="tool2_time">Daily</span>
+            </div>
+            <div class="tool-card-body">
+              <h3 class="card-title" data-i18n="tool2_title">Pelvic Power Trainer</h3>
+              <p class="card-text" data-i18n="tool2_text">Guided strength and relaxation routines for your pelvic floor—the muscle group men never train.</p>
+            </div>
+          </a>
+
+          <!-- Tool 3: Inflammation Audit -->
+          <a href="inflammation-audit.html" class="tool-card card-interactive" data-animate data-animate-delay="3">
+            <div class="tool-card-image-wrap">
+              <img class="tool-card-image" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop&q=80"
+                   alt="Healthy colorful food spread representing anti-inflammatory nutrition"
+                   width="600" height="400" loading="lazy">
+              <div class="tool-card-overlay"></div>
+              <span class="tool-card-number">3</span>
+              <span class="tool-card-time" data-i18n="tool3_time">3 min</span>
+            </div>
+            <div class="tool-card-body">
+              <h3 class="card-title" data-i18n="tool3_title">Inflammation Audit</h3>
+              <p class="card-text" data-i18n="tool3_text">Evaluate your chronic inflammation risk from stress, diet, sleep, and sitting habits.</p>
+            </div>
+          </a>
+
+          <!-- Tool 4: Sexual Longevity -->
+          <a href="sexual-longevity.html" class="tool-card card-interactive" data-animate data-animate-delay="1">
+            <div class="tool-card-image-wrap">
+              <img class="tool-card-image" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop&q=80"
+                   alt="Man meditating at sunrise representing wellness and vitality"
+                   width="600" height="400" loading="lazy">
+              <div class="tool-card-overlay"></div>
+              <span class="tool-card-number">4</span>
+              <span class="tool-card-time" data-i18n="tool4_time">Optional</span>
+            </div>
+            <div class="tool-card-body">
+              <h3 class="card-title" data-i18n="tool4_title">Sexual Longevity Dashboard</h3>
+              <p class="card-text" data-i18n="tool4_text">Private, stigma-free tracking of performance signals as indicators of overall health.</p>
+            </div>
+          </a>
+
+          <!-- Tool 5: Desk Reset -->
+          <a href="desk-reset.html" class="tool-card card-interactive" data-animate data-animate-delay="2">
+            <div class="tool-card-image-wrap">
+              <img class="tool-card-image" src="https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=600&h=400&fit=crop&q=80"
+                   alt="Modern desk workspace for remote workers"
+                   width="600" height="400" loading="lazy">
+              <div class="tool-card-overlay"></div>
+              <span class="tool-card-number">5</span>
+              <span class="tool-card-time" data-i18n="tool5_time">5 min</span>
+            </div>
+            <div class="tool-card-body">
+              <h3 class="card-title" data-i18n="tool5_title">Desk Reset Protocol</h3>
+              <p class="card-text" data-i18n="tool5_text">Quick pelvic circulation resets, hip mobility drills, and posture corrections for desk workers.</p>
+            </div>
+          </a>
+
+          <!-- Tool 6: Supplements -->
+          <a href="supplements.html" class="tool-card card-interactive" data-animate data-animate-delay="3">
+            <div class="tool-card-image-wrap">
+              <img class="tool-card-image" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&h=400&fit=crop&q=80"
+                   alt="Natural supplements and herbs on a table"
+                   width="600" height="400" loading="lazy">
+              <div class="tool-card-overlay"></div>
+              <span class="tool-card-number">6</span>
+              <span class="tool-card-time" data-i18n="tool6_time">Reference</span>
+            </div>
+            <div class="tool-card-body">
+              <h3 class="card-title" data-i18n="tool6_title">Supplement Reality Library</h3>
+              <p class="card-text" data-i18n="tool6_text">Evidence-graded reviews of every prostate supplement—no affiliate bias, no miracle claims.</p>
+            </div>
+          </a>
+
+          <!-- Tool 7: Safety -->
+          <a href="safety.html" class="tool-card card-interactive" data-animate data-animate-delay="1">
+            <div class="tool-card-image-wrap">
+              <img class="tool-card-image" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop&q=80"
+                   alt="Doctor with stethoscope representing professional medical care"
+                   width="600" height="400" loading="lazy">
+              <div class="tool-card-overlay"></div>
+              <span class="tool-card-number">7</span>
+              <span class="tool-card-time" data-i18n="tool7_time">Safety</span>
+            </div>
+            <div class="tool-card-body">
+              <h3 class="card-title" data-i18n="tool7_title">Red Flags & When to Seek Care</h3>
+              <p class="card-text" data-i18n="tool7_text">Clear symptom guidance so you know exactly when casual monitoring becomes a doctor visit.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INTERACTIVE QUIZ DEMO ===== -->
+    <section id="quiz-section" class="section" aria-labelledby="quiz-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="demo_label">Try It Now</span>
+          <h2 id="quiz-title" class="section-title" data-i18n="demo_title">Quick Strength Check</h2>
+          <p class="section-subtitle" data-i18n="demo_subtitle">Answer 3 quick questions to get a preview of your Prostate Strength Score.</p>
+        </div>
+
+        <div class="quiz-container" data-animate>
+          <!-- Left: Visual -->
+          <div class="quiz-visual hide-mobile">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&h=700&fit=crop&q=80"
+                 alt="Athletic man exercising representing prostate strength"
+                 width="600" height="700" loading="lazy">
+            <div class="quiz-visual-overlay">
+              <h3 style="color:white;font-size:var(--text-2xl);margin-bottom:var(--space-2);">Build Your Baseline</h3>
+              <p style="color:rgba(255,255,255,0.8);font-size:var(--text-sm);">Know where you stand. Then build from there.</p>
+            </div>
+          </div>
+
+          <!-- Right: Quiz Widget -->
+          <div class="quiz-widget" id="quiz-demo">
+            <!-- Progress -->
+            <div style="margin-bottom:var(--space-6);">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-2);">
+                <span class="quiz-progress-text font-medium text-sm" style="color:var(--text-secondary);">Question 1 of 3</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:33%"></div>
+              </div>
+            </div>
+
+            <!-- Step 1: Sitting -->
+            <div class="quiz-step" data-step="0" style="display:block;">
+              <h4 style="font-size:var(--text-lg);margin-bottom:var(--space-2);" data-i18n="demo_q1">How many hours do you sit per day?</h4>
+              <div class="quiz-options">
+                <div class="quiz-option" data-value="4" role="button" tabindex="0" aria-label="Less than 4 hours">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="demo_q1_a1">Less than 4 hours</span>
+                </div>
+                <div class="quiz-option" data-value="3" role="button" tabindex="0" aria-label="4-6 hours">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="demo_q1_a2">4–6 hours</span>
+                </div>
+                <div class="quiz-option" data-value="2" role="button" tabindex="0" aria-label="6-8 hours">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="demo_q1_a3">6–8 hours</span>
+                </div>
+                <div class="quiz-option" data-value="1" role="button" tabindex="0" aria-label="More than 8 hours">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="demo_q1_a4">More than 8 hours</span>
+                </div>
+              </div>
+              <div class="quiz-nav">
+                <div></div>
+                <button class="btn btn-primary" data-quiz-next data-i18n="demo_next">Next</button>
+              </div>
+            </div>
+
+            <!-- Step 2: Sleep -->
+            <div class="quiz-step" data-step="1">
+              <h4 style="font-size:var(--text-lg);margin-bottom:var(--space-2);" data-i18n="demo_q2">How would you rate your sleep quality?</h4>
+              <div class="quiz-options">
+                <div class="quiz-option" data-value="4" role="button" tabindex="0">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="demo_q2_a1">Excellent</span>
+                </div>
+                <div class="quiz-option" data-value="3" role="button" tabindex="0">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="demo_q2_a2">Good</span>
+                </div>
+                <div class="quiz-option" data-value="2" role="button" tabindex="0">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="demo_q2_a3">Fair</span>
+                </div>
+                <div class="quiz-option" data-value="1" role="button" tabindex="0">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="demo_q2_a4">Poor</span>
+                </div>
+              </div>
+              <div class="quiz-nav">
+                <button class="btn btn-ghost" data-quiz-back data-i18n="demo_back">Back</button>
+                <button class="btn btn-primary" data-quiz-next data-i18n="demo_next">Next</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Exercise -->
+            <div class="quiz-step" data-step="2">
+              <h4 style="font-size:var(--text-lg);margin-bottom:var(--space-2);" data-i18n="demo_q3">How often do you exercise per week?</h4>
+              <div class="quiz-options">
+                <div class="quiz-option" data-value="4" role="button" tabindex="0">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="demo_q3_a1">5+ times</span>
+                </div>
+                <div class="quiz-option" data-value="3" role="button" tabindex="0">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="demo_q3_a2">3–4 times</span>
+                </div>
+                <div class="quiz-option" data-value="2" role="button" tabindex="0">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="demo_q3_a3">1–2 times</span>
+                </div>
+                <div class="quiz-option" data-value="1" role="button" tabindex="0">
+                  <div class="quiz-radio"></div>
+                  <span class="quiz-label" data-i18n="demo_q3_a4">Rarely</span>
+                </div>
+              </div>
+              <div class="quiz-nav">
+                <button class="btn btn-ghost" data-quiz-back data-i18n="demo_back">Back</button>
+                <button class="btn btn-accent" data-quiz-submit data-i18n="demo_see_score">See My Preview Score</button>
+              </div>
+            </div>
+
+            <!-- Result -->
+            <div class="quiz-result">
+              <div class="score-ring" style="margin-bottom:var(--space-4);">
+                <svg viewBox="0 0 180 180">
+                  <circle class="score-ring-bg" cx="90" cy="90" r="80"/>
+                  <circle class="score-ring-fill" cx="90" cy="90" r="80"/>
+                </svg>
+                <div class="score-ring-value">0</div>
+              </div>
+              <span class="result-tier-badge card-badge badge-success">Strong</span>
+              <h4 class="result-tier" style="margin-top:var(--space-3);" data-i18n="demo_result_title">Your Preview Score</h4>
+              <p style="color:var(--text-secondary);font-size:var(--text-sm);margin-bottom:var(--space-6);" data-i18n="demo_result_text">
+                This is a quick preview. Take the full 5-minute assessment for detailed insights and personalized recommendations.
+              </p>
+              <div style="display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap;">
+                <a href="strength-score.html" class="btn btn-primary" data-i18n="demo_result_cta">Take Full Assessment</a>
+                <button class="btn btn-ghost" data-quiz-reset>↻</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS / WHY NOW ===== -->
+    <section class="section section-alt" aria-labelledby="stats-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="stats_label">The Reality</span>
+          <h2 id="stats-title" class="section-title" data-i18n="stats_title">Why Start Now?</h2>
+          <p class="section-subtitle" data-i18n="stats_subtitle">Prostate health isn't just for older men. The foundations are built in your 20s and 30s.</p>
+        </div>
+        <div class="stat-grid" data-animate>
+          <div class="stat-card">
+            <div class="stat-number" data-i18n="stat1_num">1 in 8</div>
+            <div class="stat-label" data-i18n="stat1_label">Men will face prostate issues in their lifetime</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-i18n="stat2_num">30%</div>
+            <div class="stat-label" data-i18n="stat2_label">Of men 30–40 show early inflammation markers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-i18n="stat3_num">8+ hrs</div>
+            <div class="stat-label" data-i18n="stat3_label">Average daily sitting time for desk workers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-i18n="stat4_num">73%</div>
+            <div class="stat-label" data-i18n="stat4_label">Of young men never discuss prostate health</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DESK RESET INTERACTIVE TIMER ===== -->
+    <section class="section" aria-labelledby="desk-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="desk_label">Desk Workers</span>
+          <h2 id="desk-title" class="section-title" data-i18n="desk_title">Sitting Is a Silent Risk</h2>
+          <p class="section-subtitle" data-i18n="desk_subtitle">Extended sitting compresses pelvic blood flow and increases tension. Try a quick reset.</p>
+        </div>
+
+        <div class="desk-grid" data-animate>
+          <!-- Left: Image -->
+          <div class="desk-image">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=500&fit=crop&q=80"
+                 alt="Person stretching at standing desk for pelvic health"
+                 width="600" height="500" loading="lazy">
+          </div>
+
+          <!-- Right: Timer Widget -->
+          <div class="timer-widget" id="desk-timer">
+            <div class="text-center" style="margin-bottom:var(--space-6);">
+              <div class="timer-display">2:00</div>
+            </div>
+
+            <div class="timer-steps">
+              <div class="timer-step">
+                <div class="timer-step-dot"></div>
+                <span data-i18n="desk_step1">Stand up and take 3 deep breaths</span>
+              </div>
+              <div class="timer-step">
+                <div class="timer-step-dot"></div>
+                <span data-i18n="desk_step2">Hip circles: 10 rotations each direction</span>
+              </div>
+              <div class="timer-step">
+                <div class="timer-step-dot"></div>
+                <span data-i18n="desk_step3">Deep squat hold for 20 seconds</span>
+              </div>
+              <div class="timer-step">
+                <div class="timer-step-dot"></div>
+                <span data-i18n="desk_step4">Pelvic floor squeeze: hold 5 sec, release 5 sec × 5</span>
+              </div>
+            </div>
+
+            <div class="timer-complete" data-i18n="desk_complete">
+              Reset Complete! Your pelvic circulation thanks you.
+            </div>
+
+            <div class="timer-controls">
+              <button class="btn btn-primary" data-timer-start data-i18n="desk_start">Start 2-Minute Reset</button>
+              <button class="btn btn-ghost" data-timer-pause style="display:none;" data-i18n="desk_pause">Pause</button>
+              <button class="btn btn-secondary" data-timer-restart style="display:none;" data-i18n="desk_restart">Restart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUOTE / PHILOSOPHY ===== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="container-narrow" data-animate>
+          <div class="quote-card">
+            <p class="quote-text">"Train your prostate like you train your body. Build strength early. Keep it for life."</p>
+            <p class="quote-author">— ProstateAdvice Core Philosophy</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="section" aria-labelledby="cta-title">
+      <div class="container" data-animate>
+        <div class="cta-banner">
+          <h2 id="cta-title" class="cta-title" data-i18n="cta_title">Build Prostate Strength Early. Keep It for Life.</h2>
+          <p class="cta-text" data-i18n="cta_text">Start with the 5-minute Strength Score. No account needed. 100% private.</p>
+          <a href="strength-score.html" class="btn btn-accent btn-lg" data-i18n="cta_button">Start Your Assessment</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-name">ProstateAdvice</div>
+          <p data-i18n="footer_brand_text">The lifelong prostate strength and performance companion for men 18–40. Science-grounded. Privacy-first. Zero fear tactics.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_tools">Tools</h4>
+          <div class="footer-links">
+            <a href="strength-score.html" data-i18n="tool1_title">Prostate Strength Score</a>
+            <a href="pelvic-power.html" data-i18n="tool2_title">Pelvic Power Trainer</a>
+            <a href="inflammation-audit.html" data-i18n="tool3_title">Inflammation Audit</a>
+            <a href="desk-reset.html" data-i18n="tool5_title">Desk Reset Protocol</a>
+            <a href="supplements.html" data-i18n="tool6_title">Supplement Reality Library</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_resources">Resources</h4>
+          <div class="footer-links">
+            <a href="guides/prostate-101.html" data-i18n="footer_res_prostate101">Prostate 101</a>
+            <a href="guides/longevity-plan.html" data-i18n="footer_res_longevity">Longevity Plan</a>
+            <a href="about.html" data-i18n="footer_res_about">About Us</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_legal">Legal</h4>
+          <div class="footer-links">
+            <a href="privacy.html" data-i18n="footer_legal_privacy">Privacy Policy</a>
+            <a href="accessibility.html" data-i18n="footer_legal_access">Accessibility</a>
+            <a href="safety.html" data-i18n="footer_legal_disclaimer">Medical Disclaimer</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_copy">&copy; 2025 ProstateAdvice.com. Educational resource. Not medical advice.</p>
+        <p style="font-size:var(--text-xs);max-width:500px;" data-i18n="footer_disclaimer">This site provides educational information only. It is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== DISCLAIMER BAR ===== -->
+  <div class="disclaimer-bar" role="alert">
+    <div class="disclaimer-bar-inner">
+      <p data-i18n="disclaimer_text">This site is for educational purposes only and does not provide medical advice. All data stays on your device.</p>
+      <button class="btn btn-primary btn-sm" data-accept data-i18n="disclaimer_accept">I Understand</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Generate hero particles
+    (function() {
+      const container = document.querySelector('.hero-particles');
+      if (!container || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      for (let i = 0; i < 20; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.animationDuration = (8 + Math.random() * 12) + 's';
+        p.style.animationDelay = Math.random() * 10 + 's';
+        p.style.width = p.style.height = (2 + Math.random() * 4) + 'px';
+        container.appendChild(p);
+      }
+    })();
+  </script>
+</body>
+</html>

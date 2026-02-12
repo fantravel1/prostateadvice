@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>About ProstateAdvice — Our Mission &amp; Philosophy</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Learn about ProstateAdvice: the first proactive prostate health platform for men 18-40. Strength-focused, science-grounded, privacy-first. No fear tactics, no supplement hype.">
+  <meta name="keywords" content="about prostateadvice, prostate health mission, men's health platform, proactive prostate care, prostate education">
+  <meta name="author" content="ProstateAdvice.com">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://prostateadvice.com/about.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://prostateadvice.com/about.html">
+  <meta property="og:title" content="About ProstateAdvice — Our Mission &amp; Philosophy">
+  <meta property="og:description" content="The first proactive prostate health platform for men 18-40. Strength-focused, science-grounded, privacy-first.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=630&fit=crop&q=80">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About ProstateAdvice — Our Mission &amp; Philosophy">
+  <meta name="twitter:description" content="Strength-focused, science-grounded prostate health education for men 18-40. No fear tactics.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=630&fit=crop&q=80">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About ProstateAdvice",
+    "description": "The first proactive prostate health platform for men 18-40. Strength-focused, science-grounded, privacy-first.",
+    "url": "https://prostateadvice.com/about.html",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "ProstateAdvice",
+      "url": "https://prostateadvice.com",
+      "description": "The lifelong prostate strength and performance companion for men 18-40."
+    }
+  }
+  </script>
+
+  <!-- Preload critical assets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/themes.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
+  <style>
+    /* Page-specific: About hero (small) */
+    .about-hero {
+      position: relative;
+      padding-top: calc(var(--navbar-height) + var(--space-12));
+      padding-bottom: var(--space-12);
+      overflow: hidden;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .about-hero { min-height: 400px; }
+    }
+    .about-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+    .about-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about-hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 74, 51, 0.92) 0%,
+        rgba(27, 107, 74, 0.85) 40%,
+        rgba(42, 157, 110, 0.75) 100%
+      );
+    }
+    [data-theme="dark"] .about-hero-overlay {
+      background: linear-gradient(
+        135deg,
+        rgba(10, 15, 20, 0.95) 0%,
+        rgba(15, 25, 18, 0.9) 50%,
+        rgba(10, 20, 15, 0.85) 100%
+      );
+    }
+    .about-hero-content {
+      position: relative;
+      z-index: 1;
+      color: var(--color-white);
+      max-width: 640px;
+    }
+    .about-hero-content h1 {
+      color: var(--color-white);
+      margin-bottom: var(--space-4);
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+    .about-hero-content p {
+      color: rgba(255,255,255,0.85);
+      font-size: var(--text-lg);
+      line-height: var(--line-height-relaxed);
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+
+    /* Mission quote */
+    .mission-quote {
+      background: linear-gradient(135deg, var(--color-primary-50), transparent);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      line-height: var(--line-height-tight);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    [data-theme="dark"] .mission-quote {
+      background: linear-gradient(135deg, rgba(74, 222, 128, 0.08), transparent);
+    }
+
+    /* Principle cards grid */
+    .principles-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+    @media (min-width: 640px) {
+      .principles-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .principles-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .principle-card {
+      background: var(--surface-card);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      border: 1px solid var(--color-gray-200);
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    }
+    [data-theme="dark"] .principle-card {
+      border-color: rgba(255,255,255,0.08);
+    }
+    .principle-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--color-primary-300);
+    }
+    .principle-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-50);
+      color: var(--color-primary);
+      border-radius: var(--radius-lg);
+      font-size: 1.25rem;
+      margin-bottom: var(--space-4);
+    }
+    [data-theme="dark"] .principle-icon {
+      background: rgba(74, 222, 128, 0.1);
+    }
+    .principle-card h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-2);
+    }
+    .principle-card p {
+      color: var(--text-secondary);
+      font-size: var(--text-sm);
+      line-height: var(--line-height-relaxed);
+    }
+
+    /* Not list */
+    .not-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    @media (min-width: 640px) {
+      .not-list { grid-template-columns: repeat(3, 1fr); }
+    }
+    .not-item {
+      background: var(--surface-card);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      text-align: center;
+    }
+    [data-theme="dark"] .not-item {
+      border-color: rgba(255,255,255,0.08);
+    }
+    .not-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-danger-light);
+      color: #991B1B;
+      border-radius: var(--radius-full);
+      font-size: 1.25rem;
+      margin: 0 auto var(--space-3);
+    }
+    .not-item p {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      font-weight: var(--font-weight-medium);
+    }
+
+    /* Editorial standards */
+    .standards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+    @media (min-width: 768px) {
+      .standards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .standard-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+    }
+    .standard-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-50);
+      color: var(--color-primary);
+      border-radius: var(--radius-lg);
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+    [data-theme="dark"] .standard-icon {
+      background: rgba(74, 222, 128, 0.1);
+    }
+    .standard-item h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-1);
+    }
+    .standard-item p {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: var(--line-height-relaxed);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Skip to content (accessibility) -->
+  <a href="#main" class="sr-only" data-i18n="skip_to_content" style="position:absolute;top:-40px;left:0;background:var(--color-primary);color:white;padding:8px 16px;z-index:9999;transition:top 0.3s;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand" aria-label="ProstateAdvice Home">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="currentColor"/>
+          <path d="M16 6C11.58 6 8 9.58 8 14c0 3.07 1.72 5.74 4.25 7.08L16 26l3.75-4.92C22.28 19.74 24 17.07 24 14c0-4.42-3.58-8-8-8z" fill="white" opacity="0.9"/>
+          <circle cx="16" cy="13" r="3" fill="currentColor"/>
+        </svg>
+        <span>ProstateAdvice</span>
+      </a>
+      <div class="navbar-nav">
+        <a href="/" class="nav-link" data-i18n="nav_home">Home</a>
+        <a href="strength-score.html" class="nav-link" data-i18n="nav_score">Strength Score</a>
+        <a href="pelvic-power.html" class="nav-link" data-i18n="nav_pelvic">Pelvic Power</a>
+        <a href="inflammation-audit.html" class="nav-link" data-i18n="nav_inflammation">Inflammation Audit</a>
+        <a href="desk-reset.html" class="nav-link" data-i18n="nav_desk">Desk Reset</a>
+        <a href="supplements.html" class="nav-link" data-i18n="nav_supplements">Supplements</a>
+        <a href="safety.html" class="nav-link" data-i18n="nav_safety">Safety</a>
+      </div>
+      <div class="navbar-actions">
+        <div class="lang-switcher" role="group" aria-label="Language selector">
+          <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+          <button class="lang-btn" data-lang="es" aria-label="Espa&ntilde;ol">ES</button>
+          <button class="lang-btn" data-lang="fr" aria-label="Fran&ccedil;ais">FR</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="/" data-i18n="nav_home">Home</a>
+    <a href="strength-score.html" data-i18n="nav_score">Strength Score</a>
+    <a href="pelvic-power.html" data-i18n="nav_pelvic">Pelvic Power</a>
+    <a href="inflammation-audit.html" data-i18n="nav_inflammation">Inflammation Audit</a>
+    <a href="sexual-longevity.html" data-i18n="nav_longevity">Sexual Longevity</a>
+    <a href="desk-reset.html" data-i18n="nav_desk">Desk Reset</a>
+    <a href="supplements.html" data-i18n="nav_supplements">Supplements</a>
+    <a href="safety.html" data-i18n="nav_safety">Safety</a>
+    <a href="about.html" data-i18n="nav_about">About</a>
+  </div>
+
+  <main id="main">
+    <!-- ===== HERO (Small) ===== -->
+    <section class="about-hero" aria-labelledby="about-hero-title">
+      <div class="about-hero-bg">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&h=600&fit=crop&q=80"
+             alt="Diverse team collaborating on health education content"
+             width="1600" height="600"
+             loading="eager"
+             fetchpriority="high">
+      </div>
+      <div class="about-hero-overlay"></div>
+      <div class="container">
+        <div class="about-hero-content">
+          <span class="hero-label" data-i18n="about_hero_label">Our Mission</span>
+          <h1 id="about-hero-title" data-i18n="about_hero_title">About ProstateAdvice</h1>
+          <p data-i18n="about_hero_text">We believe prostate health is a strength-building journey, not a fear-driven diagnosis. This platform exists to empower men 18&ndash;40 with proactive, science-grounded tools.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MISSION / CORE BELIEF ===== -->
+    <section class="section" aria-labelledby="mission-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="about_mission_label">Core Belief</span>
+          <h2 id="mission-title" class="section-title" data-i18n="about_mission_title">Our Mission</h2>
+          <p class="section-subtitle" data-i18n="about_mission_subtitle">We started ProstateAdvice because we saw a gap: prostate health content is designed for men over 50, packed with fear, and loaded with supplement ads. Young men deserve better.</p>
+        </div>
+        <div data-animate data-animate-delay="1">
+          <div class="mission-quote" data-i18n="about_mission_quote">
+            &ldquo;Train your prostate like you train your body. Build strength early. Keep it for life.&rdquo;
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHO WE ARE ===== -->
+    <section class="section section-alt" aria-labelledby="whoweare-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="about_who_label">Who We Are</span>
+          <h2 id="whoweare-title" class="section-title" data-i18n="about_who_title">A Proactive Health Education Platform</h2>
+        </div>
+        <div class="container-narrow" data-animate data-animate-delay="1">
+          <p style="font-size:var(--text-lg);line-height:var(--line-height-relaxed);color:var(--text-secondary);text-align:center;" data-i18n="about_who_text_1">
+            ProstateAdvice is a free, open educational platform built for men who want to take early ownership of their prostate health. We combine interactive self-assessment tools, guided pelvic training, and evidence-graded supplement reviews into a single, privacy-first experience.
+          </p>
+          <p style="font-size:var(--text-lg);line-height:var(--line-height-relaxed);color:var(--text-secondary);text-align:center;margin-top:var(--space-4);" data-i18n="about_who_text_2">
+            Our audience is men aged 18&ndash;40 who already invest in fitness, nutrition, and mental health&mdash;but have never been given the tools to proactively strengthen their prostate. We treat prostate health as a performance domain, not a medical scare.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHAT WE BELIEVE (7 Tone Principles) ===== -->
+    <section class="section" aria-labelledby="believe-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="about_believe_label">Our Principles</span>
+          <h2 id="believe-title" class="section-title" data-i18n="about_believe_title">What We Believe</h2>
+          <p class="section-subtitle" data-i18n="about_believe_subtitle">Seven principles that guide everything we create.</p>
+        </div>
+        <div class="principles-grid">
+          <div class="principle-card" data-animate data-animate-delay="1">
+            <div class="principle-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            </div>
+            <h3 data-i18n="about_p1_title">Strength-Focused</h3>
+            <p data-i18n="about_p1_text">We frame prostate health as building and maintaining strength, not avoiding disease. Proactive, not reactive.</p>
+          </div>
+          <div class="principle-card" data-animate data-animate-delay="2">
+            <div class="principle-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3 data-i18n="about_p2_title">Performance-Oriented</h3>
+            <p data-i18n="about_p2_text">We speak the language of optimization, training, and measurable progress that resonates with active, health-conscious men.</p>
+          </div>
+          <div class="principle-card" data-animate data-animate-delay="3">
+            <div class="principle-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <h3 data-i18n="about_p3_title">Science-Grounded</h3>
+            <p data-i18n="about_p3_text">Every claim is backed by peer-reviewed research. We grade evidence transparently so you can make informed decisions.</p>
+          </div>
+          <div class="principle-card" data-animate data-animate-delay="1">
+            <div class="principle-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 data-i18n="about_p4_title">Zero Fear Tactics</h3>
+            <p data-i18n="about_p4_text">No scare headlines, no guilt-based marketing, no worst-case-scenario framing. Empowerment over anxiety.</p>
+          </div>
+          <div class="principle-card" data-animate data-animate-delay="2">
+            <div class="principle-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 data-i18n="about_p5_title">Masculinity Without Toxicity</h3>
+            <p data-i18n="about_p5_text">We respect masculine identity and self-improvement culture while promoting openness, honesty, and vulnerability about health.</p>
+          </div>
+          <div class="principle-card" data-animate data-animate-delay="3">
+            <div class="principle-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+            </div>
+            <h3 data-i18n="about_p6_title">No Supplement Hype</h3>
+            <p data-i18n="about_p6_text">We never sell supplements. Our reviews are evidence-graded and free of affiliate bias or miracle claims.</p>
+          </div>
+          <div class="principle-card" data-animate data-animate-delay="1">
+            <div class="principle-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3 data-i18n="about_p7_title">Privacy-Forward</h3>
+            <p data-i18n="about_p7_text">All data stays on your device. No accounts, no tracking cookies, no selling of intimate health data. Export or delete anytime.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHAT WE ARE NOT ===== -->
+    <section class="section section-alt" aria-labelledby="not-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="about_not_label">Transparency</span>
+          <h2 id="not-title" class="section-title" data-i18n="about_not_title">What We Are Not</h2>
+          <p class="section-subtitle" data-i18n="about_not_subtitle">Being clear about our boundaries is just as important as stating our mission.</p>
+        </div>
+        <div class="not-list" data-animate data-animate-delay="1">
+          <div class="not-item">
+            <div class="not-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <p data-i18n="about_not_1">Not a cancer screening or diagnostic site</p>
+          </div>
+          <div class="not-item">
+            <div class="not-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <p data-i18n="about_not_2">Not an ED medication or ads platform</p>
+          </div>
+          <div class="not-item">
+            <div class="not-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <p data-i18n="about_not_3">Not selling supplements or products</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EDITORIAL STANDARDS ===== -->
+    <section class="section" aria-labelledby="standards-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="about_standards_label">Quality</span>
+          <h2 id="standards-title" class="section-title" data-i18n="about_standards_title">Editorial Standards</h2>
+          <p class="section-subtitle" data-i18n="about_standards_subtitle">How we ensure accuracy, transparency, and trust in every piece of content.</p>
+        </div>
+        <div class="standards-grid">
+          <div class="standard-item" data-animate data-animate-delay="1">
+            <div class="standard-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div>
+              <h4 data-i18n="about_std1_title">Peer-Reviewed Sources</h4>
+              <p data-i18n="about_std1_text">All health claims reference published research from PubMed, Cochrane, or equivalent peer-reviewed databases.</p>
+            </div>
+          </div>
+          <div class="standard-item" data-animate data-animate-delay="2">
+            <div class="standard-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div>
+              <h4 data-i18n="about_std2_title">Evidence Grading</h4>
+              <p data-i18n="about_std2_text">Supplement reviews and health recommendations use a transparent A/B/C/D grading system based on strength of evidence.</p>
+            </div>
+          </div>
+          <div class="standard-item" data-animate data-animate-delay="3">
+            <div class="standard-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <h4 data-i18n="about_std3_title">Expert Review</h4>
+              <p data-i18n="about_std3_text">Content is reviewed by health professionals with expertise in urology, pelvic health, and men's wellness.</p>
+            </div>
+          </div>
+          <div class="standard-item" data-animate data-animate-delay="4">
+            <div class="standard-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            </div>
+            <div>
+              <h4 data-i18n="about_std4_title">Clear Disclaimers</h4>
+              <p data-i18n="about_std4_text">We clearly distinguish between educational content and medical advice, and always recommend professional consultation for concerns.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="section section-alt" aria-labelledby="about-cta-title">
+      <div class="container" data-animate>
+        <div class="cta-banner">
+          <h2 id="about-cta-title" class="cta-title" data-i18n="about_cta_title">Ready to Take Control?</h2>
+          <p class="cta-text" data-i18n="about_cta_text">Explore our interactive tools and start building prostate strength today. No account needed. 100% private.</p>
+          <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;">
+            <a href="strength-score.html" class="btn btn-accent btn-lg" data-i18n="about_cta_btn1">Take the Strength Score</a>
+            <a href="/" class="btn btn-secondary btn-lg" style="border-color:rgba(255,255,255,0.4);color:white;" data-i18n="about_cta_btn2">Explore All Tools</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-name">ProstateAdvice</div>
+          <p data-i18n="footer_brand_text">The lifelong prostate strength and performance companion for men 18&ndash;40. Science-grounded. Privacy-first. Zero fear tactics.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_tools">Tools</h4>
+          <div class="footer-links">
+            <a href="strength-score.html" data-i18n="tool1_title">Prostate Strength Score</a>
+            <a href="pelvic-power.html" data-i18n="tool2_title">Pelvic Power Trainer</a>
+            <a href="inflammation-audit.html" data-i18n="tool3_title">Inflammation Audit</a>
+            <a href="desk-reset.html" data-i18n="tool5_title">Desk Reset Protocol</a>
+            <a href="supplements.html" data-i18n="tool6_title">Supplement Reality Library</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_resources">Resources</h4>
+          <div class="footer-links">
+            <a href="guides/prostate-101.html" data-i18n="footer_res_prostate101">Prostate 101</a>
+            <a href="guides/longevity-plan.html" data-i18n="footer_res_longevity">Longevity Plan</a>
+            <a href="about.html" data-i18n="footer_res_about">About Us</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_legal">Legal</h4>
+          <div class="footer-links">
+            <a href="privacy.html" data-i18n="footer_legal_privacy">Privacy Policy</a>
+            <a href="accessibility.html" data-i18n="footer_legal_access">Accessibility</a>
+            <a href="safety.html" data-i18n="footer_legal_disclaimer">Medical Disclaimer</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_copy">&copy; 2025 ProstateAdvice.com. Educational resource. Not medical advice.</p>
+        <p style="font-size:var(--text-xs);max-width:500px;" data-i18n="footer_disclaimer">This site provides educational information only. It is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== DISCLAIMER BAR ===== -->
+  <div class="disclaimer-bar" role="alert">
+    <div class="disclaimer-bar-inner">
+      <p data-i18n="disclaimer_text">This site is for educational purposes only and does not provide medical advice. All data stays on your device.</p>
+      <button class="btn btn-primary btn-sm" data-accept data-i18n="disclaimer_accept">I Understand</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

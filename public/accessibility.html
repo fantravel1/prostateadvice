@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Accessibility Statement — ProstateAdvice</title>
+  <meta name="description" content="ProstateAdvice accessibility statement. Our commitment to inclusive, keyboard-navigable, high-contrast, mobile-first health education for all users.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://prostateadvice.com/accessibility">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://prostateadvice.com/accessibility">
+  <meta property="og:title" content="Accessibility Statement — ProstateAdvice">
+  <meta property="og:description" content="Our commitment to accessible, inclusive prostate health education.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/themes.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+  <style>
+    .page-hero {
+      position: relative;
+      padding: calc(var(--navbar-height) + var(--space-12)) 0 var(--space-12);
+      overflow: hidden;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0; z-index: -2;
+    }
+    .page-hero-bg img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .page-hero-overlay {
+      position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(135deg, rgba(15,74,51,0.92), rgba(27,107,74,0.85));
+    }
+    .page-hero-content {
+      position: relative; z-index: 1; color: white;
+    }
+    .page-hero-content h1 { color: white; margin-bottom: var(--space-4); }
+    .page-hero-content p { color: rgba(255,255,255,0.85); font-size: var(--text-lg); max-width: 600px; }
+    .feature-grid {
+      display: grid; grid-template-columns: 1fr; gap: var(--space-6);
+    }
+    @media (min-width: 640px) { .feature-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .feature-grid { grid-template-columns: repeat(3, 1fr); } }
+    .feature-card {
+      background: var(--surface-card);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    [data-theme="dark"] .feature-card { border-color: rgba(255,255,255,0.08); }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .feature-icon {
+      width: 48px; height: 48px;
+      background: var(--color-primary-50);
+      color: var(--color-primary);
+      border-radius: var(--radius-lg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: var(--space-4);
+    }
+    [data-theme="dark"] .feature-icon { background: rgba(74,222,128,0.1); }
+    .feature-card h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+    .feature-card p { color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--line-height-relaxed); }
+    .settings-panel {
+      background: var(--surface-card);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+    }
+    [data-theme="dark"] .settings-panel { border-color: rgba(255,255,255,0.08); }
+    .setting-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: var(--space-4) 0;
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+    [data-theme="dark"] .setting-row { border-bottom-color: rgba(255,255,255,0.06); }
+    .setting-row:last-child { border-bottom: none; }
+    .setting-label { font-weight: var(--font-weight-semibold); }
+    .setting-desc { font-size: var(--text-sm); color: var(--text-secondary); margin-top: var(--space-1); }
+    .toggle-switch {
+      position: relative; width: 48px; height: 26px;
+      background: var(--color-gray-300); border-radius: var(--radius-full);
+      cursor: pointer; transition: background var(--transition-fast);
+      border: none;
+    }
+    .toggle-switch.active { background: var(--color-primary); }
+    .toggle-switch::after {
+      content: ''; position: absolute; top: 3px; left: 3px;
+      width: 20px; height: 20px; background: white;
+      border-radius: var(--radius-full);
+      transition: transform var(--transition-fast);
+      box-shadow: var(--shadow-sm);
+    }
+    .toggle-switch.active::after { transform: translateX(22px); }
+    .size-btns {
+      display: flex; gap: var(--space-2);
+    }
+    .size-btn {
+      padding: var(--space-2) var(--space-4);
+      border: 2px solid var(--color-gray-200);
+      border-radius: var(--radius-md);
+      font-weight: var(--font-weight-medium);
+      font-size: var(--text-sm);
+      cursor: pointer; background: var(--surface-card);
+      color: var(--text-primary);
+      transition: all var(--transition-fast);
+    }
+    .size-btn:hover { border-color: var(--color-primary-300); }
+    .size-btn.active {
+      border-color: var(--color-primary);
+      background: var(--color-primary-50);
+      color: var(--color-primary);
+    }
+    [data-theme="dark"] .size-btn { border-color: rgba(255,255,255,0.1); }
+    [data-theme="dark"] .size-btn.active { background: rgba(74,222,128,0.1); }
+    body.font-small { font-size: 14px; }
+    body.font-large { font-size: 18px; }
+    body.high-contrast {
+      --text-primary: #000000;
+      --text-secondary: #1a1a1a;
+      --color-gray-200: #666666;
+    }
+    [data-theme="dark"] body.high-contrast {
+      --text-primary: #ffffff;
+      --text-secondary: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="sr-only" style="position:absolute;top:-40px;left:0;background:var(--color-primary);color:white;padding:8px 16px;z-index:9999;transition:top 0.3s;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand" aria-label="ProstateAdvice Home">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="currentColor"/>
+          <path d="M16 6C11.58 6 8 9.58 8 14c0 3.07 1.72 5.74 4.25 7.08L16 26l3.75-4.92C22.28 19.74 24 17.07 24 14c0-4.42-3.58-8-8-8z" fill="white" opacity="0.9"/>
+          <circle cx="16" cy="13" r="3" fill="currentColor"/>
+        </svg>
+        <span>ProstateAdvice</span>
+      </a>
+      <div class="navbar-nav">
+        <a href="/" class="nav-link" data-i18n="nav_home">Home</a>
+        <a href="strength-score.html" class="nav-link" data-i18n="nav_score">Strength Score</a>
+        <a href="pelvic-power.html" class="nav-link" data-i18n="nav_pelvic">Pelvic Power</a>
+        <a href="inflammation-audit.html" class="nav-link" data-i18n="nav_inflammation">Inflammation Audit</a>
+        <a href="desk-reset.html" class="nav-link" data-i18n="nav_desk">Desk Reset</a>
+        <a href="supplements.html" class="nav-link" data-i18n="nav_supplements">Supplements</a>
+        <a href="safety.html" class="nav-link" data-i18n="nav_safety">Safety</a>
+      </div>
+      <div class="navbar-actions">
+        <div class="lang-switcher" role="group" aria-label="Language selector">
+          <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+          <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
+          <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="/" data-i18n="nav_home">Home</a>
+    <a href="strength-score.html" data-i18n="nav_score">Strength Score</a>
+    <a href="pelvic-power.html" data-i18n="nav_pelvic">Pelvic Power</a>
+    <a href="inflammation-audit.html" data-i18n="nav_inflammation">Inflammation Audit</a>
+    <a href="sexual-longevity.html" data-i18n="nav_longevity">Sexual Longevity</a>
+    <a href="desk-reset.html" data-i18n="nav_desk">Desk Reset</a>
+    <a href="supplements.html" data-i18n="nav_supplements">Supplements</a>
+    <a href="safety.html" data-i18n="nav_safety">Safety</a>
+    <a href="about.html" data-i18n="nav_about">About</a>
+  </div>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="page-hero">
+      <div class="page-hero-bg">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1600&h=500&fit=crop&q=80"
+             alt="Person using laptop representing digital accessibility"
+             width="1600" height="500" loading="eager">
+      </div>
+      <div class="page-hero-overlay"></div>
+      <div class="container">
+        <div class="page-hero-content">
+          <h1>Accessibility Statement</h1>
+          <p>We are committed to making prostate health education accessible to everyone, regardless of ability or device.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Commitment -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label">Our Commitment</span>
+          <h2 class="section-title">Health Education for Everyone</h2>
+          <p class="section-subtitle">ProstateAdvice is designed to be usable by all people. We follow WCAG 2.1 AA guidelines and continuously improve our accessibility.</p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-card" data-animate data-animate-delay="1">
+            <div class="feature-icon" aria-hidden="true">&#9000;</div>
+            <h3>Keyboard Navigation</h3>
+            <p>All interactive elements — buttons, links, quizzes, timers, and forms — are fully reachable and operable via keyboard. Tab through the site, press Enter to activate, and Escape to close overlays.</p>
+          </div>
+          <div class="feature-card" data-animate data-animate-delay="2">
+            <div class="feature-icon" aria-hidden="true">&#9681;</div>
+            <h3>High Contrast</h3>
+            <p>Our color system meets WCAG 2.1 AA contrast ratios. Enable high contrast mode below for even stronger visibility, or use our dark mode for reduced eye strain.</p>
+          </div>
+          <div class="feature-card" data-animate data-animate-delay="3">
+            <div class="feature-icon" aria-hidden="true">&#10226;</div>
+            <h3>Reduced Motion</h3>
+            <p>All animations and transitions respect the prefers-reduced-motion media query. If your OS is set to reduce motion, our site automatically disables all animations.</p>
+          </div>
+          <div class="feature-card" data-animate data-animate-delay="1">
+            <div class="feature-icon" aria-hidden="true">Aa</div>
+            <h3>Clear Language</h3>
+            <p>Content is written at an accessible reading level. Medical terms are explained plainly. We avoid jargon and use strength-focused, positive language throughout.</p>
+          </div>
+          <div class="feature-card" data-animate data-animate-delay="2">
+            <div class="feature-icon" aria-hidden="true">&#128241;</div>
+            <h3>Mobile-First</h3>
+            <p>Every page is designed mobile-first and tested across phones, tablets, and desktops. Touch targets are at least 44px for comfortable tapping. Layouts adapt fluidly.</p>
+          </div>
+          <div class="feature-card" data-animate data-animate-delay="3">
+            <div class="feature-icon" aria-hidden="true">&#128483;</div>
+            <h3>Screen Reader Support</h3>
+            <p>Semantic HTML5 structure with proper heading hierarchy, ARIA labels, roles, and live regions. All images include descriptive alt text. Form controls are properly labeled.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Settings -->
+    <section class="section section-alt" aria-labelledby="settings-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label">Personalize</span>
+          <h2 id="settings-title" class="section-title">Accessibility Settings</h2>
+          <p class="section-subtitle">Customize your experience. Settings are saved locally on your device.</p>
+        </div>
+
+        <div class="container-narrow" data-animate>
+          <div class="settings-panel">
+            <div class="setting-row">
+              <div>
+                <div class="setting-label">Font Size</div>
+                <div class="setting-desc">Adjust text size across the site</div>
+              </div>
+              <div class="size-btns" role="radiogroup" aria-label="Font size">
+                <button class="size-btn" data-size="small" role="radio" aria-checked="false">Small</button>
+                <button class="size-btn active" data-size="medium" role="radio" aria-checked="true">Medium</button>
+                <button class="size-btn" data-size="large" role="radio" aria-checked="false">Large</button>
+              </div>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <div class="setting-label">High Contrast</div>
+                <div class="setting-desc">Increase contrast for better visibility</div>
+              </div>
+              <button class="toggle-switch" id="toggle-contrast" role="switch" aria-checked="false" aria-label="Toggle high contrast"></button>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <div class="setting-label">Reduce Motion</div>
+                <div class="setting-desc">Disable all animations and transitions</div>
+              </div>
+              <button class="toggle-switch" id="toggle-motion" role="switch" aria-checked="false" aria-label="Toggle reduced motion"></button>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <div class="setting-label">Dark Mode</div>
+                <div class="setting-desc">Switch to dark theme for reduced eye strain</div>
+              </div>
+              <button class="toggle-switch" id="toggle-dark" role="switch" aria-checked="false" aria-label="Toggle dark mode"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section">
+      <div class="container">
+        <div class="container-narrow text-center" data-animate>
+          <h2 class="section-title">Accessibility Feedback</h2>
+          <p style="color:var(--text-secondary);font-size:var(--text-lg);line-height:var(--line-height-relaxed);margin-bottom:var(--space-6);">
+            We are continuously working to improve accessibility. If you encounter any barriers or have suggestions, we want to hear from you. Your feedback helps us serve everyone better.
+          </p>
+          <p style="color:var(--text-secondary);margin-bottom:var(--space-8);">
+            Please reach out at <strong style="color:var(--text-primary);">accessibility@prostateadvice.com</strong>
+          </p>
+          <a href="/" class="btn btn-primary btn-lg">Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-name">ProstateAdvice</div>
+          <p data-i18n="footer_brand_text">The lifelong prostate strength and performance companion for men 18–40. Science-grounded. Privacy-first. Zero fear tactics.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_tools">Tools</h4>
+          <div class="footer-links">
+            <a href="strength-score.html" data-i18n="tool1_title">Prostate Strength Score</a>
+            <a href="pelvic-power.html" data-i18n="tool2_title">Pelvic Power Trainer</a>
+            <a href="inflammation-audit.html" data-i18n="tool3_title">Inflammation Audit</a>
+            <a href="desk-reset.html" data-i18n="tool5_title">Desk Reset Protocol</a>
+            <a href="supplements.html" data-i18n="tool6_title">Supplement Reality Library</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_resources">Resources</h4>
+          <div class="footer-links">
+            <a href="guides/prostate-101.html" data-i18n="footer_res_prostate101">Prostate 101</a>
+            <a href="guides/longevity-plan.html" data-i18n="footer_res_longevity">Longevity Plan</a>
+            <a href="about.html" data-i18n="footer_res_about">About Us</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_legal">Legal</h4>
+          <div class="footer-links">
+            <a href="privacy.html" data-i18n="footer_legal_privacy">Privacy Policy</a>
+            <a href="accessibility.html" data-i18n="footer_legal_access">Accessibility</a>
+            <a href="safety.html" data-i18n="footer_legal_disclaimer">Medical Disclaimer</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_copy">&copy; 2025 ProstateAdvice.com. Educational resource. Not medical advice.</p>
+        <p style="font-size:var(--text-xs);max-width:500px;" data-i18n="footer_disclaimer">This site provides educational information only. It is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    (function() {
+      // Font size
+      const savedSize = PA_Storage.getPref('font_size', 'medium');
+      if (savedSize === 'small') document.body.classList.add('font-small');
+      if (savedSize === 'large') document.body.classList.add('font-large');
+      document.querySelectorAll('.size-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.size === savedSize);
+        btn.setAttribute('aria-checked', btn.dataset.size === savedSize);
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.size-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked','false'); });
+          btn.classList.add('active');
+          btn.setAttribute('aria-checked','true');
+          document.body.classList.remove('font-small', 'font-large');
+          if (btn.dataset.size === 'small') document.body.classList.add('font-small');
+          if (btn.dataset.size === 'large') document.body.classList.add('font-large');
+          PA_Storage.setPref('font_size', btn.dataset.size);
+        });
+      });
+
+      // High contrast
+      const contrastToggle = document.getElementById('toggle-contrast');
+      const savedContrast = PA_Storage.getPref('high_contrast', false);
+      if (savedContrast) { document.body.classList.add('high-contrast'); contrastToggle.classList.add('active'); contrastToggle.setAttribute('aria-checked','true'); }
+      contrastToggle.addEventListener('click', () => {
+        const on = contrastToggle.classList.toggle('active');
+        document.body.classList.toggle('high-contrast', on);
+        contrastToggle.setAttribute('aria-checked', on);
+        PA_Storage.setPref('high_contrast', on);
+      });
+
+      // Reduced motion
+      const motionToggle = document.getElementById('toggle-motion');
+      const savedMotion = PA_Storage.getPref('reduce_motion', false);
+      if (savedMotion) { document.documentElement.style.setProperty('--transition-fast','0ms'); document.documentElement.style.setProperty('--transition-base','0ms'); document.documentElement.style.setProperty('--transition-slow','0ms'); motionToggle.classList.add('active'); motionToggle.setAttribute('aria-checked','true'); }
+      motionToggle.addEventListener('click', () => {
+        const on = motionToggle.classList.toggle('active');
+        motionToggle.setAttribute('aria-checked', on);
+        if (on) { document.documentElement.style.setProperty('--transition-fast','0ms'); document.documentElement.style.setProperty('--transition-base','0ms'); document.documentElement.style.setProperty('--transition-slow','0ms'); }
+        else { document.documentElement.style.removeProperty('--transition-fast'); document.documentElement.style.removeProperty('--transition-base'); document.documentElement.style.removeProperty('--transition-slow'); }
+        PA_Storage.setPref('reduce_motion', on);
+      });
+
+      // Dark mode
+      const darkToggle = document.getElementById('toggle-dark');
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) { darkToggle.classList.add('active'); darkToggle.setAttribute('aria-checked','true'); }
+      darkToggle.addEventListener('click', () => {
+        PA.toggleTheme();
+        const nowDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        darkToggle.classList.toggle('active', nowDark);
+        darkToggle.setAttribute('aria-checked', nowDark);
+      });
+    })();
+  </script>
+</body>
+</html>
