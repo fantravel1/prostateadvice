@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Prostate Strength Score — Free 5-Minute Assessment | ProstateAdvice</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Take the free 5-minute Prostate Strength Score assessment. Evaluate sleep, stress, sitting, and lifestyle factors to get your personalized prostate health tier with actionable weekly recommendations.">
+  <meta name="keywords" content="prostate strength score, prostate health assessment, prostate quiz, men's health assessment, pelvic health score, prostate lifestyle quiz, prostate self-assessment">
+  <meta name="author" content="ProstateAdvice.com">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://prostateadvice.com/strength-score.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://prostateadvice.com/strength-score.html">
+  <meta property="og:title" content="Prostate Strength Score — Free 5-Minute Assessment">
+  <meta property="og:description" content="Evaluate your prostate health baseline with our interactive 8-question assessment. Get a personalized tier (Foundational to Elite) and actionable weekly recommendations. 100% private.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=630&fit=crop&q=80">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prostate Strength Score — Free 5-Minute Assessment">
+  <meta name="twitter:description" content="Interactive 8-question prostate health assessment. Get your tier and personalized action plan. 100% private, no sign-up.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=630&fit=crop&q=80">
+
+  <!-- AEO: Structured Data — HealthTopicContent -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthTopicContent",
+    "name": "Prostate Strength Score Assessment",
+    "headline": "Prostate Strength Score — 5-Minute Interactive Assessment",
+    "description": "An interactive 8-question assessment evaluating sleep quality, body composition, stress levels, sitting time, alcohol intake, urinary symptoms, pelvic tension, and morning erection consistency to generate a personalized prostate strength tier with actionable weekly recommendations.",
+    "url": "https://prostateadvice.com/strength-score.html",
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-06-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ProstateAdvice",
+      "url": "https://prostateadvice.com"
+    },
+    "audience": {
+      "@type": "PeopleAudience",
+      "suggestedMinAge": 18,
+      "suggestedMaxAge": 40,
+      "suggestedGender": "male"
+    },
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Prostate Health"
+    },
+    "mainContentOfPage": {
+      "@type": "WebPageElement",
+      "description": "Interactive self-assessment tool with 8 lifestyle questions, composite scoring algorithm, tier classification (Foundational/Developing/Strong/Elite), personalized recommendations, and local data storage."
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the Prostate Strength Score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Prostate Strength Score is a free 5-minute self-assessment that evaluates 8 lifestyle factors—sleep quality, waist measurement, stress level, sitting time, alcohol frequency, urinary symptoms, pelvic tension, and morning erection consistency—to generate a composite score and personalized tier (Foundational, Developing, Strong, or Elite) with weekly action items."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this assessment a medical diagnosis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The Prostate Strength Score is an educational self-assessment tool designed to raise awareness about lifestyle factors that affect prostate health. It is not a medical diagnosis or substitute for professional medical advice. Always consult a healthcare provider for medical concerns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my assessment data private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All assessment data is stored locally on your device using browser storage. No data is sent to any server, no account is required, and you can delete your data at any time."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preload critical assets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/themes.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
+  <style>
+    /* ===== Strength Score Page-Specific Styles ===== */
+
+    /* Hero — Compact variant */
+    .hero-compact {
+      position: relative;
+      padding-top: calc(var(--navbar-height) + var(--space-8));
+      padding-bottom: var(--space-12);
+      overflow: hidden;
+      min-height: auto;
+      display: flex;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .hero-compact {
+        padding-top: calc(var(--navbar-height) + var(--space-12));
+        padding-bottom: var(--space-16);
+      }
+    }
+    .hero-compact .hero-content {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero-compact .hero-title {
+      font-size: var(--text-4xl);
+    }
+    .hero-compact .hero-description {
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-compact .hero-stats {
+      justify-content: center;
+    }
+
+    /* Assessment Container */
+    .ss-container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .ss-widget {
+      background: var(--surface-card);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-6);
+      border: 1px solid var(--color-gray-200);
+      box-shadow: var(--shadow-xl);
+    }
+    @media (min-width: 768px) {
+      .ss-widget {
+        padding: var(--space-8) var(--space-10);
+      }
+    }
+    [data-theme="dark"] .ss-widget {
+      border-color: rgba(255,255,255,0.08);
+    }
+
+    /* Progress area */
+    .ss-progress-wrap {
+      margin-bottom: var(--space-6);
+    }
+    .ss-progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-2);
+    }
+    .ss-progress-text {
+      font-size: var(--text-sm);
+      font-weight: var(--font-weight-medium);
+      color: var(--text-secondary);
+    }
+
+    /* Steps */
+    .ss-step {
+      display: none;
+    }
+    .ss-question-header {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+    }
+    .ss-question-icon {
+      font-size: var(--text-2xl);
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .ss-question-title {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-bold);
+      line-height: var(--line-height-snug);
+    }
+    .ss-optional-tag {
+      font-size: var(--text-sm);
+      font-weight: var(--font-weight-normal);
+      color: var(--text-tertiary);
+    }
+    .ss-options {
+      margin-bottom: var(--space-6);
+    }
+    .ss-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    /* Shake animation for validation */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-6px); }
+      40% { transform: translateX(6px); }
+      60% { transform: translateX(-4px); }
+      80% { transform: translateX(4px); }
+    }
+
+    /* Result Section */
+    .ss-result {
+      display: none;
+      text-align: center;
+    }
+
+    .ss-score-ring {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      margin: 0 auto var(--space-6);
+    }
+    .ss-score-ring svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+    .ss-score-ring-bg {
+      fill: none;
+      stroke: var(--color-gray-200);
+      stroke-width: 10;
+    }
+    [data-theme="dark"] .ss-score-ring-bg {
+      stroke: rgba(255,255,255,0.1);
+    }
+    .ss-score-ring-fill {
+      fill: none;
+      stroke: var(--color-primary);
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-dasharray: 502;
+      stroke-dashoffset: 502;
+      transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .ss-score-value {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: var(--text-5xl);
+      font-weight: var(--font-weight-extrabold);
+      color: var(--color-primary);
+      line-height: 1;
+    }
+    .ss-score-label {
+      position: absolute;
+      top: 65%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: var(--text-xs);
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing-wider);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .ss-tier-badge {
+      margin-bottom: var(--space-3);
+      font-size: var(--text-sm);
+    }
+    .ss-tier-title {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-2);
+    }
+    .ss-tier-desc {
+      color: var(--text-secondary);
+      font-size: var(--text-base);
+      line-height: var(--line-height-relaxed);
+      max-width: 520px;
+      margin: 0 auto var(--space-8);
+    }
+
+    /* Action cards */
+    .ss-actions-section {
+      text-align: left;
+      margin-bottom: var(--space-8);
+    }
+    .ss-actions-heading {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-4);
+      text-align: center;
+      color: var(--text-primary);
+    }
+    .ss-actions-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+    .ss-action-card {
+      background: var(--surface-section);
+      border-radius: var(--radius-xl);
+      padding: var(--space-5);
+      border: 1px solid var(--color-gray-200);
+      animation: fadeInUp 0.5s ease both;
+    }
+    [data-theme="dark"] .ss-action-card {
+      background: var(--surface-section-alt);
+      border-color: rgba(255,255,255,0.06);
+    }
+    .ss-action-title {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-3);
+      color: var(--color-primary);
+    }
+    .ss-action-num {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      color: white;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-sm);
+      font-weight: var(--font-weight-bold);
+      flex-shrink: 0;
+    }
+    .ss-action-items {
+      padding-left: var(--space-10);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    .ss-action-items li {
+      position: relative;
+      padding-left: var(--space-4);
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: var(--line-height-relaxed);
+    }
+    .ss-action-items li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      border-radius: var(--radius-full);
+      background: var(--color-primary-300);
+    }
+
+    /* Tracking section */
+    .ss-tracking-section {
+      text-align: left;
+      margin-bottom: var(--space-8);
+      background: var(--color-primary-50);
+      border-radius: var(--radius-xl);
+      padding: var(--space-5);
+    }
+    [data-theme="dark"] .ss-tracking-section {
+      background: rgba(74, 222, 128, 0.06);
+    }
+    .ss-tracking-heading {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-3);
+      color: var(--color-primary);
+      text-align: center;
+    }
+    .ss-tracking-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+    .ss-tracking-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: var(--line-height-relaxed);
+    }
+    .ss-tracking-icon {
+      flex-shrink: 0;
+      font-size: var(--text-lg);
+      line-height: 1.3;
+    }
+
+    /* Disclaimer banner in results */
+    .ss-disclaimer {
+      background: var(--color-warning-light);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+      font-size: var(--text-sm);
+      color: #92400E;
+      margin-bottom: var(--space-6);
+      text-align: center;
+      line-height: var(--line-height-relaxed);
+    }
+    [data-theme="dark"] .ss-disclaimer {
+      background: rgba(245, 158, 11, 0.12);
+      color: var(--color-warning);
+    }
+
+    /* Result buttons */
+    .ss-result-actions {
+      display: flex;
+      gap: var(--space-3);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-success-flash {
+      background: var(--color-success) !important;
+      color: white !important;
+    }
+
+    /* Info section below assessment */
+    .ss-info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+    @media (min-width: 640px) {
+      .ss-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .ss-info-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .ss-info-card {
+      text-align: center;
+      padding: var(--space-6);
+      background: var(--surface-card);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-gray-200);
+    }
+    [data-theme="dark"] .ss-info-card {
+      border-color: rgba(255,255,255,0.08);
+    }
+    .ss-info-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-50);
+      color: var(--color-primary);
+      border-radius: var(--radius-lg);
+      margin: 0 auto var(--space-3);
+      font-size: 1.5rem;
+    }
+    [data-theme="dark"] .ss-info-icon {
+      background: rgba(74, 222, 128, 0.1);
+    }
+    .ss-info-title {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-1);
+    }
+    .ss-info-text {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: var(--line-height-relaxed);
+    }
+
+    /* Tier explainer */
+    .ss-tiers-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+    @media (min-width: 640px) {
+      .ss-tiers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .ss-tiers-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .ss-tier-card {
+      padding: var(--space-5);
+      border-radius: var(--radius-xl);
+      border: 2px solid var(--color-gray-200);
+      text-align: center;
+    }
+    [data-theme="dark"] .ss-tier-card {
+      border-color: rgba(255,255,255,0.08);
+    }
+    .ss-tier-card-elite {
+      border-color: var(--color-primary);
+      background: var(--color-primary-50);
+    }
+    [data-theme="dark"] .ss-tier-card-elite {
+      background: rgba(74, 222, 128, 0.06);
+      border-color: var(--color-primary);
+    }
+    .ss-tier-card-strong {
+      border-color: var(--color-success);
+      background: var(--color-success-light);
+    }
+    [data-theme="dark"] .ss-tier-card-strong {
+      background: rgba(34, 197, 94, 0.06);
+      border-color: var(--color-success);
+    }
+    .ss-tier-card-developing {
+      border-color: var(--color-warning);
+      background: var(--color-warning-light);
+    }
+    [data-theme="dark"] .ss-tier-card-developing {
+      background: rgba(245, 158, 11, 0.06);
+      border-color: var(--color-warning);
+    }
+    .ss-tier-card-foundational {
+      border-color: var(--color-danger);
+      background: var(--color-danger-light);
+    }
+    [data-theme="dark"] .ss-tier-card-foundational {
+      background: rgba(239, 68, 68, 0.06);
+      border-color: var(--color-danger);
+    }
+    .ss-tier-card-name {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-1);
+    }
+    .ss-tier-card-range {
+      font-size: var(--text-sm);
+      color: var(--text-tertiary);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-2);
+    }
+    .ss-tier-card-desc {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: var(--line-height-relaxed);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Skip to content (accessibility) -->
+  <a href="#main" class="sr-only" data-i18n="skip_to_content" style="position:absolute;top:-40px;left:0;background:var(--color-primary);color:white;padding:8px 16px;z-index:9999;transition:top 0.3s;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand" aria-label="ProstateAdvice Home">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="currentColor"/>
+          <path d="M16 6C11.58 6 8 9.58 8 14c0 3.07 1.72 5.74 4.25 7.08L16 26l3.75-4.92C22.28 19.74 24 17.07 24 14c0-4.42-3.58-8-8-8z" fill="white" opacity="0.9"/>
+          <circle cx="16" cy="13" r="3" fill="currentColor"/>
+        </svg>
+        <span>ProstateAdvice</span>
+      </a>
+
+      <div class="navbar-nav">
+        <a href="/" class="nav-link" data-i18n="nav_home">Home</a>
+        <a href="strength-score.html" class="nav-link active" data-i18n="nav_score">Strength Score</a>
+        <a href="pelvic-power.html" class="nav-link" data-i18n="nav_pelvic">Pelvic Power</a>
+        <a href="inflammation-audit.html" class="nav-link" data-i18n="nav_inflammation">Inflammation Audit</a>
+        <a href="desk-reset.html" class="nav-link" data-i18n="nav_desk">Desk Reset</a>
+        <a href="supplements.html" class="nav-link" data-i18n="nav_supplements">Supplements</a>
+        <a href="safety.html" class="nav-link" data-i18n="nav_safety">Safety</a>
+      </div>
+
+      <div class="navbar-actions">
+        <div class="lang-switcher" role="group" aria-label="Language selector">
+          <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+          <button class="lang-btn" data-lang="es" aria-label="Espa&#241;ol">ES</button>
+          <button class="lang-btn" data-lang="fr" aria-label="Fran&#231;ais">FR</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-i18n-aria="menu_open">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="/" data-i18n="nav_home">Home</a>
+    <a href="strength-score.html" data-i18n="nav_score">Strength Score</a>
+    <a href="pelvic-power.html" data-i18n="nav_pelvic">Pelvic Power</a>
+    <a href="inflammation-audit.html" data-i18n="nav_inflammation">Inflammation Audit</a>
+    <a href="sexual-longevity.html" data-i18n="nav_longevity">Sexual Longevity</a>
+    <a href="desk-reset.html" data-i18n="nav_desk">Desk Reset</a>
+    <a href="supplements.html" data-i18n="nav_supplements">Supplements</a>
+    <a href="safety.html" data-i18n="nav_safety">Safety</a>
+    <a href="about.html" data-i18n="nav_about">About</a>
+  </div>
+
+  <main id="main">
+    <!-- ===== HERO (Compact) ===== -->
+    <section class="hero hero-compact" aria-labelledby="hero-title">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&h=600&fit=crop&q=80"
+             alt="Man training in gym representing prostate strength assessment"
+             width="1600" height="600"
+             loading="eager"
+             fetchpriority="high">
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-float hero-float-1" aria-hidden="true"></div>
+      <div class="hero-float hero-float-2" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-label" data-i18n="ss_hero_label">Interactive Assessment</span>
+          <h1 id="hero-title" class="hero-title">
+            <span data-i18n="ss_hero_title">Prostate Strength Score</span>
+          </h1>
+          <p class="hero-description" data-i18n="ss_hero_desc">
+            Answer 8 lifestyle questions to discover your prostate health baseline. Get a personalized tier, top action items, and weekly tracking prompts. Takes about 5 minutes. 100% private.
+          </p>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-number" data-i18n="ss_stat_1_num">8</div>
+              <div class="hero-stat-label" data-i18n="ss_stat_1_label">Questions</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number" data-i18n="ss_stat_2_num">5 min</div>
+              <div class="hero-stat-label" data-i18n="ss_stat_2_label">To Complete</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number" data-i18n="ss_stat_3_num">4</div>
+              <div class="hero-stat-label" data-i18n="ss_stat_3_label">Strength Tiers</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number" data-i18n="ss_stat_4_num">100%</div>
+              <div class="hero-stat-label" data-i18n="ss_stat_4_label">Private</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ASSESSMENT SECTION ===== -->
+    <section class="section" aria-labelledby="assessment-title" id="assessment-section">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="ss_assess_label">Your Assessment</span>
+          <h2 id="assessment-title" class="section-title" data-i18n="ss_assess_title">Evaluate Your Prostate Strength</h2>
+          <p class="section-subtitle" data-i18n="ss_assess_subtitle">Answer honestly for the most accurate results. Optional questions give deeper insights but can be skipped.</p>
+        </div>
+
+        <div class="ss-container" data-animate>
+          <div class="ss-widget" id="ss-assessment">
+            <!-- Progress -->
+            <div class="ss-progress-wrap">
+              <div class="ss-progress-header">
+                <span class="ss-progress-text" data-i18n="ss_question">Question 1 of 8</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill ss-progress-fill" style="width: 12.5%"></div>
+              </div>
+            </div>
+
+            <!-- Steps container (populated by JS) -->
+            <div class="ss-steps"></div>
+
+            <!-- Result container -->
+            <div class="ss-result">
+              <!-- Score Ring -->
+              <div class="ss-score-ring">
+                <svg viewBox="0 0 200 200">
+                  <circle class="ss-score-ring-bg" cx="100" cy="100" r="80"/>
+                  <circle class="ss-score-ring-fill" cx="100" cy="100" r="80"/>
+                </svg>
+                <div class="ss-score-value">0</div>
+                <div class="ss-score-label" data-i18n="ss_out_of_100">out of 100</div>
+              </div>
+
+              <!-- Tier Badge -->
+              <span class="card-badge ss-tier-badge badge-success">Strong</span>
+
+              <!-- Tier Info -->
+              <h3 class="ss-tier-title" data-i18n="ss_result_title">Your Prostate Strength Score</h3>
+              <p class="ss-tier-desc"></p>
+
+              <!-- Disclaimer -->
+              <div class="ss-disclaimer" data-i18n="ss_disclaimer">
+                This is an educational self-assessment, not a medical diagnosis. It does not replace professional medical advice. If you have health concerns, please consult a healthcare provider.
+              </div>
+
+              <!-- Personalized Actions -->
+              <div class="ss-actions-section">
+                <h4 class="ss-actions-heading" data-i18n="ss_actions_heading">Your Top Action Items</h4>
+                <div class="ss-actions-list"></div>
+              </div>
+
+              <!-- Tracking Prompts -->
+              <div class="ss-tracking-section">
+                <h4 class="ss-tracking-heading" data-i18n="ss_tracking_heading">What to Track This Week</h4>
+                <div class="ss-tracking-list"></div>
+              </div>
+
+              <!-- Result Actions -->
+              <div class="ss-result-actions">
+                <button class="btn btn-primary ss-save-btn" onclick="StrengthScore.saveResult()" data-i18n="ss_save_score">Save My Score</button>
+                <button class="btn btn-secondary" onclick="StrengthScore.reset()" data-i18n="ss_take_again">Take It Again</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="section section-alt" aria-labelledby="how-score-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="ss_how_label">How It Works</span>
+          <h2 id="how-score-title" class="section-title" data-i18n="ss_how_title">What the Score Measures</h2>
+          <p class="section-subtitle" data-i18n="ss_how_subtitle">Eight key lifestyle factors that research links to prostate health and function.</p>
+        </div>
+
+        <div class="ss-info-grid" data-animate>
+          <div class="ss-info-card">
+            <div class="ss-info-icon" aria-hidden="true">&#128164;</div>
+            <h3 class="ss-info-title" data-i18n="ss_factor_sleep">Sleep Quality</h3>
+            <p class="ss-info-text" data-i18n="ss_factor_sleep_desc">Poor sleep raises cortisol and inflammatory markers that directly affect prostate tissue.</p>
+          </div>
+          <div class="ss-info-card">
+            <div class="ss-info-icon" aria-hidden="true">&#128086;</div>
+            <h3 class="ss-info-title" data-i18n="ss_factor_waist">Body Composition</h3>
+            <p class="ss-info-text" data-i18n="ss_factor_waist_desc">Visceral fat increases estrogen conversion and chronic inflammation around the prostate.</p>
+          </div>
+          <div class="ss-info-card">
+            <div class="ss-info-icon" aria-hidden="true">&#129504;</div>
+            <h3 class="ss-info-title" data-i18n="ss_factor_stress">Stress Level</h3>
+            <p class="ss-info-text" data-i18n="ss_factor_stress_desc">Chronic stress elevates cortisol, tightens pelvic muscles, and suppresses immune function.</p>
+          </div>
+          <div class="ss-info-card">
+            <div class="ss-info-icon" aria-hidden="true">&#129681;</div>
+            <h3 class="ss-info-title" data-i18n="ss_factor_sitting">Sitting Time</h3>
+            <p class="ss-info-text" data-i18n="ss_factor_sitting_desc">Prolonged sitting compresses pelvic blood flow and increases prostate area temperature.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TIER EXPLAINER ===== -->
+    <section class="section" aria-labelledby="tiers-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="ss_tiers_label">Score Tiers</span>
+          <h2 id="tiers-title" class="section-title" data-i18n="ss_tiers_title">Understanding Your Tier</h2>
+          <p class="section-subtitle" data-i18n="ss_tiers_subtitle">Your composite score places you in one of four tiers, each with targeted guidance.</p>
+        </div>
+
+        <div class="ss-tiers-grid" data-animate>
+          <div class="ss-tier-card ss-tier-card-elite">
+            <h3 class="ss-tier-card-name" data-i18n="ss_tier_elite">Elite</h3>
+            <div class="ss-tier-card-range">85 &ndash; 100%</div>
+            <p class="ss-tier-card-desc" data-i18n="ss_tier_elite_short">Exceptional lifestyle habits. Maintain and optimize for long-term resilience.</p>
+          </div>
+          <div class="ss-tier-card ss-tier-card-strong">
+            <h3 class="ss-tier-card-name" data-i18n="ss_tier_strong">Strong</h3>
+            <div class="ss-tier-card-range">65 &ndash; 84%</div>
+            <p class="ss-tier-card-desc" data-i18n="ss_tier_strong_short">Solid foundation with minor areas to fine-tune for peak prostate health.</p>
+          </div>
+          <div class="ss-tier-card ss-tier-card-developing">
+            <h3 class="ss-tier-card-name" data-i18n="ss_tier_developing">Developing</h3>
+            <div class="ss-tier-card-range">40 &ndash; 64%</div>
+            <p class="ss-tier-card-desc" data-i18n="ss_tier_developing_short">Several improvement areas identified. Focus on 1-2 changes per week.</p>
+          </div>
+          <div class="ss-tier-card ss-tier-card-foundational">
+            <h3 class="ss-tier-card-name" data-i18n="ss_tier_foundational">Foundational</h3>
+            <div class="ss-tier-card-range">0 &ndash; 39%</div>
+            <p class="ss-tier-card-desc" data-i18n="ss_tier_foundational_short">Your starting point. Small, consistent changes will compound into significant gains.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ / AEO SECTION ===== -->
+    <section class="section section-alt" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label" data-i18n="ss_faq_label">Common Questions</span>
+          <h2 id="faq-title" class="section-title" data-i18n="ss_faq_title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="container-narrow" data-animate>
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span data-i18n="ss_faq_q1">What does the Prostate Strength Score measure?</span>
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-body-inner" data-i18n="ss_faq_a1">
+                The score evaluates 8 lifestyle factors linked to prostate health: sleep quality, body composition (via belt fit proxy), stress level, daily sitting time, alcohol frequency, urinary symptoms, pelvic tension awareness, and morning erection consistency. Each factor is scored 1-4, and the composite is presented as a percentage.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span data-i18n="ss_faq_q2">Is this a medical diagnosis?</span>
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-body-inner" data-i18n="ss_faq_a2">
+                No. This is an educational self-assessment tool designed to help you understand how lifestyle habits may affect prostate health. It is not a substitute for professional medical advice, diagnosis, or treatment. If you have specific health concerns, please consult a healthcare provider.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span data-i18n="ss_faq_q3">Why are some questions optional?</span>
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-body-inner" data-i18n="ss_faq_a3">
+                Questions about urinary symptoms, pelvic tension, and morning erections are marked optional because they involve sensitive health signals. Answering them provides a more complete picture, but skipping them still gives a meaningful score based on the core lifestyle factors.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span data-i18n="ss_faq_q4">How is my data stored?</span>
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-body-inner" data-i18n="ss_faq_a4">
+                All data stays on your device. We use browser-based storage (localStorage and IndexedDB) and never send any data to external servers. No account is needed. You can export or delete your data at any time.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span data-i18n="ss_faq_q5">Can I take the assessment again?</span>
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-body-inner" data-i18n="ss_faq_a5">
+                Yes! We recommend retaking the assessment every 2-4 weeks to track progress. Each score is saved locally so you can see how your tier evolves as you implement the recommended action items.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="section" aria-labelledby="cta-title">
+      <div class="container" data-animate>
+        <div class="cta-banner">
+          <h2 id="cta-title" class="cta-title" data-i18n="ss_cta_title">Ready to Build Prostate Strength?</h2>
+          <p class="cta-text" data-i18n="ss_cta_text">Explore our full suite of tools: Pelvic Power Trainer, Desk Reset Protocol, and Inflammation Audit.</p>
+          <a href="/" class="btn btn-accent btn-lg" data-i18n="ss_cta_button">Explore All Tools</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-name">ProstateAdvice</div>
+          <p data-i18n="footer_brand_text">The lifelong prostate strength and performance companion for men 18&#8211;40. Science-grounded. Privacy-first. Zero fear tactics.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_tools">Tools</h4>
+          <div class="footer-links">
+            <a href="strength-score.html" data-i18n="tool1_title">Prostate Strength Score</a>
+            <a href="pelvic-power.html" data-i18n="tool2_title">Pelvic Power Trainer</a>
+            <a href="inflammation-audit.html" data-i18n="tool3_title">Inflammation Audit</a>
+            <a href="desk-reset.html" data-i18n="tool5_title">Desk Reset Protocol</a>
+            <a href="supplements.html" data-i18n="tool6_title">Supplement Reality Library</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_resources">Resources</h4>
+          <div class="footer-links">
+            <a href="guides/prostate-101.html" data-i18n="footer_res_prostate101">Prostate 101</a>
+            <a href="guides/longevity-plan.html" data-i18n="footer_res_longevity">Longevity Plan</a>
+            <a href="about.html" data-i18n="footer_res_about">About Us</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading" data-i18n="footer_legal">Legal</h4>
+          <div class="footer-links">
+            <a href="privacy.html" data-i18n="footer_legal_privacy">Privacy Policy</a>
+            <a href="accessibility.html" data-i18n="footer_legal_access">Accessibility</a>
+            <a href="safety.html" data-i18n="footer_legal_disclaimer">Medical Disclaimer</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_copy">&copy; 2025 ProstateAdvice.com. Educational resource. Not medical advice.</p>
+        <p style="font-size:var(--text-xs);max-width:500px;" data-i18n="footer_disclaimer">This site provides educational information only. It is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== DISCLAIMER BAR ===== -->
+  <div class="disclaimer-bar" role="alert">
+    <div class="disclaimer-bar-inner">
+      <p data-i18n="disclaimer_text">This site is for educational purposes only and does not provide medical advice. All data stays on your device.</p>
+      <button class="btn btn-primary btn-sm" data-accept data-i18n="disclaimer_accept">I Understand</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/strength-score.js"></script>
+
+  <!-- Inline translations for assessment-specific keys -->
+  <script>
+  (function() {
+    'use strict';
+
+    // Extend PA translations if available
+    var ssTranslations = {
+      en: {
+        // Hero
+        ss_hero_label: 'Interactive Assessment',
+        ss_hero_title: 'Prostate Strength Score',
+        ss_hero_desc: 'Answer 8 lifestyle questions to discover your prostate health baseline. Get a personalized tier, top action items, and weekly tracking prompts. Takes about 5 minutes. 100% private.',
+        ss_stat_1_num: '8',
+        ss_stat_1_label: 'Questions',
+        ss_stat_2_num: '5 min',
+        ss_stat_2_label: 'To Complete',
+        ss_stat_3_num: '4',
+        ss_stat_3_label: 'Strength Tiers',
+        ss_stat_4_num: '100%',
+        ss_stat_4_label: 'Private',
+
+        // Assessment
+        ss_assess_label: 'Your Assessment',
+        ss_assess_title: 'Evaluate Your Prostate Strength',
+        ss_assess_subtitle: 'Answer honestly for the most accurate results. Optional questions give deeper insights but can be skipped.',
+
+        // Questions
+        ss_q1: 'How would you rate your overall sleep quality?',
+        ss_q1_a1: 'Excellent',
+        ss_q1_a2: 'Good',
+        ss_q1_a3: 'Fair',
+        ss_q1_a4: 'Poor',
+        ss_q2: 'How does your belt or waistband typically fit?',
+        ss_q2_a1: 'Comfortable',
+        ss_q2_a2: 'Snug',
+        ss_q2_a3: 'Tight',
+        ss_q2_a4: 'Very Tight',
+        ss_q3: 'What is your general stress level?',
+        ss_q3_a1: 'Low',
+        ss_q3_a2: 'Moderate',
+        ss_q3_a3: 'High',
+        ss_q3_a4: 'Very High',
+        ss_q4: 'How many hours do you sit on a typical day?',
+        ss_q4_a1: 'Less than 4 hours',
+        ss_q4_a2: '4\u20136 hours',
+        ss_q4_a3: '6\u20138 hours',
+        ss_q4_a4: '8+ hours',
+        ss_q5: 'How often do you consume alcohol?',
+        ss_q5_a1: 'Rarely / Never',
+        ss_q5_a2: '1\u20132 times weekly',
+        ss_q5_a3: '3\u20135 times weekly',
+        ss_q5_a4: 'Daily',
+        ss_q6: 'Do you experience any urinary symptoms?',
+        ss_q6_a1: 'None',
+        ss_q6_a2: 'Occasional',
+        ss_q6_a3: 'Frequent',
+        ss_q6_a4: 'Constant',
+        ss_q7: 'Are you aware of tension in your pelvic area?',
+        ss_q7_a1: 'No tension',
+        ss_q7_a2: 'Occasional',
+        ss_q7_a3: 'Frequent',
+        ss_q7_a4: 'Constant',
+        ss_q8: 'How consistent are your morning erections?',
+        ss_q8_a1: 'Consistent',
+        ss_q8_a2: 'Mostly',
+        ss_q8_a3: 'Sometimes',
+        ss_q8_a4: 'Rarely',
+
+        // Nav
+        ss_next: 'Next',
+        ss_back: 'Back',
+        ss_skip_or_next: 'Skip / Next',
+        ss_see_results: 'See My Results',
+        ss_optional: 'Optional',
+        ss_question: 'Question',
+        ss_of: 'of',
+        ss_complete: 'Assessment Complete',
+        ss_out_of_100: 'out of 100',
+
+        // Tiers
+        ss_tier_elite: 'Elite',
+        ss_tier_strong: 'Strong',
+        ss_tier_developing: 'Developing',
+        ss_tier_foundational: 'Foundational',
+        ss_tier_elite_desc: 'Outstanding! Your lifestyle strongly supports prostate health. Maintain these habits and inspire others.',
+        ss_tier_strong_desc: 'Great foundation! A few targeted improvements can elevate your prostate resilience even further.',
+        ss_tier_developing_desc: 'You have room to grow. Focus on 1\u20132 key areas this week for meaningful improvement.',
+        ss_tier_foundational_desc: 'This is your starting point. Small changes compound over time\u2014begin with the top action item below.',
+        ss_tier_elite_short: 'Exceptional lifestyle habits. Maintain and optimize for long-term resilience.',
+        ss_tier_strong_short: 'Solid foundation with minor areas to fine-tune for peak prostate health.',
+        ss_tier_developing_short: 'Several improvement areas identified. Focus on 1-2 changes per week.',
+        ss_tier_foundational_short: 'Your starting point. Small, consistent changes will compound into significant gains.',
+
+        // Results
+        ss_result_title: 'Your Prostate Strength Score',
+        ss_disclaimer: 'This is an educational self-assessment, not a medical diagnosis. It does not replace professional medical advice. If you have health concerns, please consult a healthcare provider.',
+        ss_actions_heading: 'Your Top Action Items',
+        ss_tracking_heading: 'What to Track This Week',
+        ss_save_score: 'Save My Score',
+        ss_saved: 'Saved!',
+        ss_take_again: 'Take It Again',
+
+        // Recommendations
+        ss_rec_sleep_title: 'Improve Sleep Quality',
+        ss_rec_sleep_1: 'Set a consistent bedtime and wake time, even on weekends.',
+        ss_rec_sleep_2: 'Avoid screens 60 minutes before bed and keep your room cool (65\u201368\u00b0F).',
+        ss_rec_sleep_3: 'Consider magnesium glycinate (200\u2013400mg) before bed for deeper sleep.',
+        ss_rec_waist_title: 'Manage Body Composition',
+        ss_rec_waist_1: 'Aim for 150+ minutes of moderate exercise per week.',
+        ss_rec_waist_2: 'Reduce processed food intake and focus on whole foods, lean protein, and vegetables.',
+        ss_rec_waist_3: 'Track waist measurements monthly\u2014visceral fat directly impacts prostate inflammation.',
+        ss_rec_stress_title: 'Reduce Chronic Stress',
+        ss_rec_stress_1: 'Practice 5\u201310 minutes of daily breathwork or meditation.',
+        ss_rec_stress_2: 'Take regular breaks during work\u2014try the Pomodoro technique.',
+        ss_rec_stress_3: 'Chronic cortisol raises inflammation. Prioritize recovery days in your routine.',
+        ss_rec_sitting_title: 'Reduce Sitting Time',
+        ss_rec_sitting_1: 'Stand or walk for 5 minutes every 45 minutes of sitting.',
+        ss_rec_sitting_2: 'Try our Desk Reset Protocol for guided pelvic circulation exercises.',
+        ss_rec_sitting_3: 'Consider a standing desk or sit-stand converter for your workspace.',
+        ss_rec_alcohol_title: 'Optimize Alcohol Intake',
+        ss_rec_alcohol_1: 'Limit alcohol to 1\u20132 drinks per occasion, max 2\u20133 days per week.',
+        ss_rec_alcohol_2: 'Choose red wine over beer or spirits if you do drink\u2014resveratrol may have protective effects.',
+        ss_rec_alcohol_3: 'Stay hydrated\u2014drink water between alcoholic beverages.',
+        ss_rec_urinary_title: 'Address Urinary Health',
+        ss_rec_urinary_1: 'Practice pelvic floor exercises (Kegels) daily\u2014try our Pelvic Power Trainer.',
+        ss_rec_urinary_2: 'Stay hydrated but limit fluids 2 hours before bed.',
+        ss_rec_urinary_3: 'If symptoms persist or worsen, consult a urologist\u2014early evaluation matters.',
+        ss_rec_pelvic_title: 'Release Pelvic Tension',
+        ss_rec_pelvic_1: 'Practice reverse Kegels and deep diaphragmatic breathing daily.',
+        ss_rec_pelvic_2: 'Stretch hip flexors and do deep squat holds for 30 seconds, 3 times daily.',
+        ss_rec_pelvic_3: 'Reduce prolonged sitting and try pelvic floor relaxation before bed.',
+        ss_rec_erection_title: 'Support Sexual Health',
+        ss_rec_erection_1: 'Morning erections are a key vascular health marker\u2014prioritize cardiovascular exercise.',
+        ss_rec_erection_2: 'Optimize sleep, reduce stress, and limit alcohol for hormonal balance.',
+        ss_rec_erection_3: 'If morning erections are consistently absent, consider discussing testosterone levels with your doctor.',
+
+        // Tracking
+        ss_track_sleep: 'Track your bedtime and wake-up time for 7 days.',
+        ss_track_waist: 'Note your belt notch position at the start and end of the week.',
+        ss_track_stress: 'Rate your daily stress level (1\u201310) each evening this week.',
+        ss_track_sitting: 'Log your sitting hours each day this week.',
+        ss_track_alcohol: 'Record every drink you have this week\u2014awareness is the first step.',
+        ss_track_urinary: 'Note nighttime bathroom trips and any urgency episodes this week.',
+        ss_track_pelvic: 'Do a 2-minute body scan each morning\u2014notice where you hold pelvic tension.',
+        ss_track_erection: 'Note morning erection presence and quality for 7 consecutive days.',
+
+        // Info section
+        ss_how_label: 'How It Works',
+        ss_how_title: 'What the Score Measures',
+        ss_how_subtitle: 'Eight key lifestyle factors that research links to prostate health and function.',
+        ss_factor_sleep: 'Sleep Quality',
+        ss_factor_sleep_desc: 'Poor sleep raises cortisol and inflammatory markers that directly affect prostate tissue.',
+        ss_factor_waist: 'Body Composition',
+        ss_factor_waist_desc: 'Visceral fat increases estrogen conversion and chronic inflammation around the prostate.',
+        ss_factor_stress: 'Stress Level',
+        ss_factor_stress_desc: 'Chronic stress elevates cortisol, tightens pelvic muscles, and suppresses immune function.',
+        ss_factor_sitting: 'Sitting Time',
+        ss_factor_sitting_desc: 'Prolonged sitting compresses pelvic blood flow and increases prostate area temperature.',
+
+        // Tier explainer
+        ss_tiers_label: 'Score Tiers',
+        ss_tiers_title: 'Understanding Your Tier',
+        ss_tiers_subtitle: 'Your composite score places you in one of four tiers, each with targeted guidance.',
+
+        // FAQ
+        ss_faq_label: 'Common Questions',
+        ss_faq_title: 'Frequently Asked Questions',
+        ss_faq_q1: 'What does the Prostate Strength Score measure?',
+        ss_faq_a1: 'The score evaluates 8 lifestyle factors linked to prostate health: sleep quality, body composition (via belt fit proxy), stress level, daily sitting time, alcohol frequency, urinary symptoms, pelvic tension awareness, and morning erection consistency. Each factor is scored 1-4, and the composite is presented as a percentage.',
+        ss_faq_q2: 'Is this a medical diagnosis?',
+        ss_faq_a2: 'No. This is an educational self-assessment tool designed to help you understand how lifestyle habits may affect prostate health. It is not a substitute for professional medical advice, diagnosis, or treatment. If you have specific health concerns, please consult a healthcare provider.',
+        ss_faq_q3: 'Why are some questions optional?',
+        ss_faq_a3: 'Questions about urinary symptoms, pelvic tension, and morning erections are marked optional because they involve sensitive health signals. Answering them provides a more complete picture, but skipping them still gives a meaningful score based on the core lifestyle factors.',
+        ss_faq_q4: 'How is my data stored?',
+        ss_faq_a4: 'All data stays on your device. We use browser-based storage (localStorage and IndexedDB) and never send any data to external servers. No account is needed. You can export or delete your data at any time.',
+        ss_faq_q5: 'Can I take the assessment again?',
+        ss_faq_a5: 'Yes! We recommend retaking the assessment every 2-4 weeks to track progress. Each score is saved locally so you can see how your tier evolves as you implement the recommended action items.',
+
+        // CTA
+        ss_cta_title: 'Ready to Build Prostate Strength?',
+        ss_cta_text: 'Explore our full suite of tools: Pelvic Power Trainer, Desk Reset Protocol, and Inflammation Audit.',
+        ss_cta_button: 'Explore All Tools'
+      },
+
+      es: {
+        ss_hero_label: 'Evaluaci\u00f3n Interactiva',
+        ss_hero_title: 'Puntuaci\u00f3n de Fortaleza Prost\u00e1tica',
+        ss_hero_desc: 'Responde 8 preguntas sobre estilo de vida para descubrir tu l\u00ednea base de salud prost\u00e1tica. Obt\u00e9n un nivel personalizado, acciones prioritarias y seguimiento semanal. Toma unos 5 minutos. 100% privado.',
+        ss_stat_1_num: '8',
+        ss_stat_1_label: 'Preguntas',
+        ss_stat_2_num: '5 min',
+        ss_stat_2_label: 'Para Completar',
+        ss_stat_3_num: '4',
+        ss_stat_3_label: 'Niveles de Fuerza',
+        ss_stat_4_num: '100%',
+        ss_stat_4_label: 'Privado',
+        ss_assess_label: 'Tu Evaluaci\u00f3n',
+        ss_assess_title: 'Eval\u00faa Tu Fortaleza Prost\u00e1tica',
+        ss_assess_subtitle: 'Responde honestamente para resultados m\u00e1s precisos. Las preguntas opcionales dan mayor profundidad pero pueden omitirse.',
+        ss_q1: '\u00bfC\u00f3mo calificar\u00edas tu calidad de sue\u00f1o general?',
+        ss_q1_a1: 'Excelente',
+        ss_q1_a2: 'Buena',
+        ss_q1_a3: 'Regular',
+        ss_q1_a4: 'Mala',
+        ss_q2: '\u00bfC\u00f3mo te queda normalmente el cintur\u00f3n?',
+        ss_q2_a1: 'C\u00f3modo',
+        ss_q2_a2: 'Ajustado',
+        ss_q2_a3: 'Apretado',
+        ss_q2_a4: 'Muy Apretado',
+        ss_q3: '\u00bfCu\u00e1l es tu nivel general de estr\u00e9s?',
+        ss_q3_a1: 'Bajo',
+        ss_q3_a2: 'Moderado',
+        ss_q3_a3: 'Alto',
+        ss_q3_a4: 'Muy Alto',
+        ss_q4: '\u00bfCu\u00e1ntas horas te sientas en un d\u00eda t\u00edpico?',
+        ss_q4_a1: 'Menos de 4 horas',
+        ss_q4_a2: '4\u20136 horas',
+        ss_q4_a3: '6\u20138 horas',
+        ss_q4_a4: '8+ horas',
+        ss_q5: '\u00bfCon qu\u00e9 frecuencia consumes alcohol?',
+        ss_q5_a1: 'Rara vez / Nunca',
+        ss_q5_a2: '1\u20132 veces por semana',
+        ss_q5_a3: '3\u20135 veces por semana',
+        ss_q5_a4: 'Diariamente',
+        ss_q6: '\u00bfExperimentas alg\u00fan s\u00edntoma urinario?',
+        ss_q6_a1: 'Ninguno',
+        ss_q6_a2: 'Ocasional',
+        ss_q6_a3: 'Frecuente',
+        ss_q6_a4: 'Constante',
+        ss_q7: '\u00bfEres consciente de tensi\u00f3n en tu \u00e1rea p\u00e9lvica?',
+        ss_q7_a1: 'Sin tensi\u00f3n',
+        ss_q7_a2: 'Ocasional',
+        ss_q7_a3: 'Frecuente',
+        ss_q7_a4: 'Constante',
+        ss_q8: '\u00bfQu\u00e9 tan consistentes son tus erecciones matutinas?',
+        ss_q8_a1: 'Consistentes',
+        ss_q8_a2: 'Generalmente',
+        ss_q8_a3: 'A veces',
+        ss_q8_a4: 'Rara vez',
+        ss_next: 'Siguiente',
+        ss_back: 'Atr\u00e1s',
+        ss_skip_or_next: 'Omitir / Siguiente',
+        ss_see_results: 'Ver Mis Resultados',
+        ss_optional: 'Opcional',
+        ss_question: 'Pregunta',
+        ss_of: 'de',
+        ss_complete: 'Evaluaci\u00f3n Completa',
+        ss_out_of_100: 'de 100',
+        ss_tier_elite: '\u00c9lite',
+        ss_tier_strong: 'Fuerte',
+        ss_tier_developing: 'En Desarrollo',
+        ss_tier_foundational: 'Fundacional',
+        ss_tier_elite_desc: '\u00a1Excepcional! Tu estilo de vida apoya fuertemente la salud prost\u00e1tica. Mant\u00e9n estos h\u00e1bitos.',
+        ss_tier_strong_desc: '\u00a1Gran base! Unas pocas mejoras espec\u00edficas pueden elevar tu resiliencia prost\u00e1tica a\u00fan m\u00e1s.',
+        ss_tier_developing_desc: 'Tienes margen de mejora. Enf\u00f3cate en 1\u20132 \u00e1reas clave esta semana.',
+        ss_tier_foundational_desc: 'Este es tu punto de partida. Los peque\u00f1os cambios se acumulan con el tiempo.',
+        ss_result_title: 'Tu Puntuaci\u00f3n de Fortaleza Prost\u00e1tica',
+        ss_disclaimer: 'Esta es una autoevaluaci\u00f3n educativa, no un diagn\u00f3stico m\u00e9dico. No reemplaza el consejo m\u00e9dico profesional. Si tienes preocupaciones de salud, consulta a un profesional.',
+        ss_actions_heading: 'Tus Acciones Prioritarias',
+        ss_tracking_heading: 'Qu\u00e9 Registrar Esta Semana',
+        ss_save_score: 'Guardar Mi Puntuaci\u00f3n',
+        ss_saved: '\u00a1Guardado!',
+        ss_take_again: 'Hacerlo de Nuevo',
+        ss_how_label: 'C\u00f3mo Funciona',
+        ss_how_title: 'Qu\u00e9 Mide la Puntuaci\u00f3n',
+        ss_how_subtitle: 'Ocho factores clave de estilo de vida que la investigaci\u00f3n vincula con la salud prost\u00e1tica.',
+        ss_factor_sleep: 'Calidad del Sue\u00f1o',
+        ss_factor_sleep_desc: 'El mal sue\u00f1o aumenta el cortisol y los marcadores inflamatorios que afectan directamente el tejido prost\u00e1tico.',
+        ss_factor_waist: 'Composici\u00f3n Corporal',
+        ss_factor_waist_desc: 'La grasa visceral aumenta la conversi\u00f3n de estr\u00f3geno y la inflamaci\u00f3n cr\u00f3nica alrededor de la pr\u00f3stata.',
+        ss_factor_stress: 'Nivel de Estr\u00e9s',
+        ss_factor_stress_desc: 'El estr\u00e9s cr\u00f3nico eleva el cortisol, tensa los m\u00fasculos p\u00e9lvicos y suprime la funci\u00f3n inmune.',
+        ss_factor_sitting: 'Tiempo Sentado',
+        ss_factor_sitting_desc: 'Estar sentado mucho tiempo comprime el flujo sangu\u00edneo p\u00e9lvico y aumenta la temperatura del \u00e1rea prost\u00e1tica.',
+        ss_tiers_label: 'Niveles de Puntuaci\u00f3n',
+        ss_tiers_title: 'Entendiendo Tu Nivel',
+        ss_tiers_subtitle: 'Tu puntuaci\u00f3n compuesta te ubica en uno de cuatro niveles, cada uno con orientaci\u00f3n espec\u00edfica.',
+        ss_faq_label: 'Preguntas Comunes',
+        ss_faq_title: 'Preguntas Frecuentes',
+        ss_cta_title: '\u00bfListo Para Fortalecer Tu Pr\u00f3stata?',
+        ss_cta_text: 'Explora nuestra suite completa de herramientas: Entrenador P\u00e9lvico, Protocolo de Escritorio y Auditor\u00eda de Inflamaci\u00f3n.',
+        ss_cta_button: 'Explorar Todas las Herramientas'
+      },
+
+      fr: {
+        ss_hero_label: '\u00c9valuation Interactive',
+        ss_hero_title: 'Score de Force Prostatique',
+        ss_hero_desc: 'R\u00e9pondez \u00e0 8 questions sur votre mode de vie pour d\u00e9couvrir votre base de sant\u00e9 prostatique. Obtenez un niveau personnalis\u00e9, des actions prioritaires et un suivi hebdomadaire. Environ 5 minutes. 100% priv\u00e9.',
+        ss_stat_1_num: '8',
+        ss_stat_1_label: 'Questions',
+        ss_stat_2_num: '5 min',
+        ss_stat_2_label: '\u00c0 Compl\u00e9ter',
+        ss_stat_3_num: '4',
+        ss_stat_3_label: 'Niveaux de Force',
+        ss_stat_4_num: '100%',
+        ss_stat_4_label: 'Priv\u00e9',
+        ss_assess_label: 'Votre \u00c9valuation',
+        ss_assess_title: '\u00c9valuez Votre Force Prostatique',
+        ss_assess_subtitle: 'R\u00e9pondez honn\u00eatement pour des r\u00e9sultats pr\u00e9cis. Les questions optionnelles offrent plus de d\u00e9tails mais peuvent \u00eatre ignor\u00e9es.',
+        ss_q1: 'Comment \u00e9valuez-vous votre qualit\u00e9 de sommeil g\u00e9n\u00e9rale ?',
+        ss_q1_a1: 'Excellente',
+        ss_q1_a2: 'Bonne',
+        ss_q1_a3: 'Moyenne',
+        ss_q1_a4: 'Mauvaise',
+        ss_q2: 'Comment votre ceinture ou pantalon vous va-t-il g\u00e9n\u00e9ralement ?',
+        ss_q2_a1: 'Confortable',
+        ss_q2_a2: 'Ajust\u00e9',
+        ss_q2_a3: 'Serr\u00e9',
+        ss_q2_a4: 'Tr\u00e8s Serr\u00e9',
+        ss_q3: 'Quel est votre niveau de stress g\u00e9n\u00e9ral ?',
+        ss_q3_a1: 'Faible',
+        ss_q3_a2: 'Mod\u00e9r\u00e9',
+        ss_q3_a3: '\u00c9lev\u00e9',
+        ss_q3_a4: 'Tr\u00e8s \u00c9lev\u00e9',
+        ss_q4: 'Combien d\'heures restez-vous assis dans une journ\u00e9e typique ?',
+        ss_q4_a1: 'Moins de 4 heures',
+        ss_q4_a2: '4\u20136 heures',
+        ss_q4_a3: '6\u20138 heures',
+        ss_q4_a4: '8+ heures',
+        ss_q5: '\u00c0 quelle fr\u00e9quence consommez-vous de l\'alcool ?',
+        ss_q5_a1: 'Rarement / Jamais',
+        ss_q5_a2: '1\u20132 fois par semaine',
+        ss_q5_a3: '3\u20135 fois par semaine',
+        ss_q5_a4: 'Quotidiennement',
+        ss_q6: 'Avez-vous des sympt\u00f4mes urinaires ?',
+        ss_q6_a1: 'Aucun',
+        ss_q6_a2: 'Occasionnel',
+        ss_q6_a3: 'Fr\u00e9quent',
+        ss_q6_a4: 'Constant',
+        ss_q7: '\u00cates-vous conscient d\'une tension dans votre zone pelvienne ?',
+        ss_q7_a1: 'Aucune tension',
+        ss_q7_a2: 'Occasionnelle',
+        ss_q7_a3: 'Fr\u00e9quente',
+        ss_q7_a4: 'Constante',
+        ss_q8: 'Quelle est la r\u00e9gularit\u00e9 de vos \u00e9rections matinales ?',
+        ss_q8_a1: 'R\u00e9guli\u00e8res',
+        ss_q8_a2: 'G\u00e9n\u00e9ralement',
+        ss_q8_a3: 'Parfois',
+        ss_q8_a4: 'Rarement',
+        ss_next: 'Suivant',
+        ss_back: 'Retour',
+        ss_skip_or_next: 'Passer / Suivant',
+        ss_see_results: 'Voir Mes R\u00e9sultats',
+        ss_optional: 'Optionnel',
+        ss_question: 'Question',
+        ss_of: 'de',
+        ss_complete: '\u00c9valuation Termin\u00e9e',
+        ss_out_of_100: 'sur 100',
+        ss_tier_elite: '\u00c9lite',
+        ss_tier_strong: 'Fort',
+        ss_tier_developing: 'En D\u00e9veloppement',
+        ss_tier_foundational: 'Fondamental',
+        ss_tier_elite_desc: 'Exceptionnel ! Votre mode de vie soutient fortement la sant\u00e9 prostatique. Maintenez ces habitudes.',
+        ss_tier_strong_desc: 'Excellente base ! Quelques am\u00e9liorations cibl\u00e9es peuvent encore renforcer votre r\u00e9silience prostatique.',
+        ss_tier_developing_desc: 'Vous avez de la marge. Concentrez-vous sur 1\u20132 domaines cl\u00e9s cette semaine.',
+        ss_tier_foundational_desc: 'C\'est votre point de d\u00e9part. Les petits changements s\'accumulent avec le temps.',
+        ss_result_title: 'Votre Score de Force Prostatique',
+        ss_disclaimer: 'Ceci est une auto-\u00e9valuation \u00e9ducative, pas un diagnostic m\u00e9dical. Elle ne remplace pas les conseils m\u00e9dicaux professionnels. Si vous avez des pr\u00e9occupations, consultez un professionnel de sant\u00e9.',
+        ss_actions_heading: 'Vos Actions Prioritaires',
+        ss_tracking_heading: 'Quoi Suivre Cette Semaine',
+        ss_save_score: 'Enregistrer Mon Score',
+        ss_saved: 'Enregistr\u00e9 !',
+        ss_take_again: 'Refaire le Test',
+        ss_how_label: 'Comment \u00c7a Marche',
+        ss_how_title: 'Ce Que Le Score Mesure',
+        ss_how_subtitle: 'Huit facteurs cl\u00e9s du mode de vie que la recherche lie \u00e0 la sant\u00e9 prostatique.',
+        ss_factor_sleep: 'Qualit\u00e9 du Sommeil',
+        ss_factor_sleep_desc: 'Un mauvais sommeil augmente le cortisol et les marqueurs inflammatoires qui affectent directement le tissu prostatique.',
+        ss_factor_waist: 'Composition Corporelle',
+        ss_factor_waist_desc: 'La graisse visc\u00e9rale augmente la conversion d\'estrog\u00e8ne et l\'inflammation chronique autour de la prostate.',
+        ss_factor_stress: 'Niveau de Stress',
+        ss_factor_stress_desc: 'Le stress chronique \u00e9l\u00e8ve le cortisol, tend les muscles pelviens et supprime la fonction immunitaire.',
+        ss_factor_sitting: 'Temps Assis',
+        ss_factor_sitting_desc: 'La position assise prolong\u00e9e comprime le flux sanguin pelvien et augmente la temp\u00e9rature de la zone prostatique.',
+        ss_tiers_label: 'Niveaux de Score',
+        ss_tiers_title: 'Comprendre Votre Niveau',
+        ss_tiers_subtitle: 'Votre score composite vous place dans l\'un des quatre niveaux, chacun avec des conseils cibl\u00e9s.',
+        ss_faq_label: 'Questions Fr\u00e9quentes',
+        ss_faq_title: 'Questions Fr\u00e9quemment Pos\u00e9es',
+        ss_cta_title: 'Pr\u00eat \u00e0 Renforcer Votre Prostate ?',
+        ss_cta_text: 'Explorez notre suite compl\u00e8te d\'outils : Entra\u00eeneur Pelvien, Protocole Bureau et Audit d\'Inflammation.',
+        ss_cta_button: 'Explorer Tous les Outils'
+      }
+    };
+
+    // Merge translations into PA's translation system if available
+    // The PA.t() function looks up translations[currentLang][key], so we need to extend it
+    // We do this by hooking into the PA object or using a data-attribute approach
+    if (typeof PA !== 'undefined') {
+      // Store translations on window for the strength-score.js to access
+      window._ssTranslations = ssTranslations;
+
+      // Override PA.t to check our translations first
+      var originalT = PA.t;
+      PA.t = function(key) {
+        var lang = document.documentElement.lang || 'en';
+        if (ssTranslations[lang] && ssTranslations[lang][key]) {
+          return ssTranslations[lang][key];
+        }
+        return originalT(key);
+      };
+
+      // Re-apply language to update new elements
+      var currentLang = document.documentElement.lang || 'en';
+      PA.setLanguage(currentLang);
+    }
+  })();
+  </script>
+</body>
+</html>
